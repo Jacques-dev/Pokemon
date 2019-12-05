@@ -11,7 +11,7 @@ public class pokedex {
 	public pokedex(Map<Integer, Pokemon> pokedex) {
 		this.pokedex = pokedex;
 	}
-//Bisous Théo
+//Bisous wtf
 	@Override
 	public String toString() {
 		StringBuilder str = new StringBuilder();
