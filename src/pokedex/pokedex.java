@@ -11,7 +11,7 @@ public class pokedex {
 	public pokedex(Map<Integer, Pokemon> pokedex) {
 		this.pokedex = pokedex;
 	}
-//Soucer des mouettes
+
 	@Override
 	public String toString() {
 		StringBuilder str = new StringBuilder();

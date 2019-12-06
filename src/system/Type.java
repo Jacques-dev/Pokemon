@@ -20,7 +20,7 @@ public abstract class Type {
 
 	@Override
 	public String toString() {
-		return "Type [name=" + name + ", weakness=" + weakness + ", strength=" + strength + "]";
+		return "Type = " + name;
 	}
 	
 	public ArrayList<Type> getWeakness() {
