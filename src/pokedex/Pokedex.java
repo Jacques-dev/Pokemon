@@ -49,10 +49,6 @@ public class Pokedex {
 	    return test;
 	}
 	
-	public List<ArrayList> openPokedex() {
-		return pokedex;
-	}
-	
 	public void checkPokemon(String name) {
 		for (ArrayList array : pokedex) {
 			for (int i = 0 ; i != array.size() ; i++) {
