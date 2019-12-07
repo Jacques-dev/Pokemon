@@ -58,12 +58,25 @@ public class Pokedex {
 			for (int i = 0 ; i != array.size() ; i++) {
 				
 				if (name.equals(array.get(1))) {
-					System.out.println(array);
+					print(array);
 					return;
 				}
 			}
 		}
 		System.out.println("This "+name+" is unknown, sorry..");
+	}
+	
+	public void print(ArrayList a) {
+		System.out.println("id : "+a.get(0));
+		System.out.println("name : "+a.get(1));
+		System.out.println("height : "+a.get(3));
+		System.out.println("weight : "+a.get(4));
+		System.out.println("type1 : "+a.get(5));
+		try {
+			System.out.println("type2 : "+a.get(6));
+		} catch (Exception e) {
+			
+		}
 	}
 	
 }

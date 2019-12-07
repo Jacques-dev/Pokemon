@@ -3,9 +3,6 @@ package main;
 import java.io.IOException;
 
 import pokedex.Pokedex;
-import system.PhysicalCapacity;
-import system.Type;
-import types.Normal;
 
 public class main {
 
@@ -23,7 +20,7 @@ public class main {
 			e1.printStackTrace();
 		}
 		
-		t.checkPokemon("pichu");
+		t.checkPokemon("bulbasaur");
 	}
 
 }
