@@ -1,4 +1,3 @@
-id,identifier,picture,height,weight,type1,type2
 1,bulbasaur,img/001.png,7,69,grass,poison
 2,ivysaur,img/002.png,10,130,grass,poison
 3,venusaur,img/003.png,20,1000,grass,poison
