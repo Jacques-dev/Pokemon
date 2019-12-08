@@ -1,6 +1,6 @@
-package system;
+package interfaces;
 
-public interface Capacity {
+public interface CapacityInterface {
 
 	public String getName();
 	public int getPower();

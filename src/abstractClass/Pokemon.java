@@ -1,10 +1,12 @@
-package system;
+package abstractClass;
 
 import java.util.List;
 
-public abstract class Pokemon implements Interface {
+import interfaces.CapacityInterface;
+
+public abstract class Pokemon {
 	
-	private final List<Capacity> capacities;
+	private final List<CapacityInterface> capacityInterfaces;
 	private final int exp;
 	private final int life;
 	private final int damages;
@@ -13,9 +15,9 @@ public abstract class Pokemon implements Interface {
 	private final String specialDefense;
 	private final int speed;
 	
-	public Pokemon(List<Capacity> capacities, int exp, int life, int damages, int protections, String specialAttack,
+	public Pokemon(List<CapacityInterface> capacityInterfaces, int exp, int life, int damages, int protections, String specialAttack,
 			String specialDefense, int speed) {
-		this.capacities = capacities;
+		this.capacityInterfaces = capacityInterfaces;
 		this.exp = exp;
 		this.life = life;
 		this.damages = damages;
@@ -27,7 +29,7 @@ public abstract class Pokemon implements Interface {
 
 	@Override
 	public String toString() {
-		return "Pokemon [capacities=" + capacities + ", exp=" + exp + ", life=" + life + ", damages=" + damages
+		return "Pokemon [capacities=" + capacityInterfaces + ", exp=" + exp + ", life=" + life + ", damages=" + damages
 				+ ", protections=" + protections + ", specialAttack=" + specialAttack + ", specialDefense="
 				+ specialDefense + ", speed=" + speed + "]";
 	}

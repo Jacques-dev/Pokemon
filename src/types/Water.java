@@ -2,7 +2,7 @@ package types;
 
 import java.util.ArrayList;
 
-import system.Type;
+import abstractClass.Type;
 
 public class Water extends Type{
 	@SuppressWarnings("serial")

@@ -1,19 +1,18 @@
-package system;
+package capacityType;
 
 import java.util.Objects;
 
-import types.Normal;
+import abstractClass.Type;
+import interfaces.CapacityInterface;
 
-public class PhysicalCapacity implements Capacity {
+public class StatusCapacity implements CapacityInterface{
 	
 	private final String name;
 	private final int power;
 	private final int precision;
 	private final Type type;
-	public static final PhysicalCapacity TACKLE = new PhysicalCapacity("Tackle", 15, 100, new Normal());
 	
-	public PhysicalCapacity(String name, int power, int precision, Type type) {
-		super();
+	public StatusCapacity(String name, int power, int precision, Type type) {
 		if (power <15 || power > 300 || !((power%5) == 0)) {
 			throw new IllegalArgumentException("Power field is not correct");
 		}
@@ -31,7 +30,7 @@ public class PhysicalCapacity implements Capacity {
 		return "PhysicalCapacity [name=" + name + ", power=" + power + ", precision=" + precision + ", type=" + type
 				+ "]";
 	}
-
+	
 	public String getName() {
 		return name;
 	}
@@ -46,6 +45,6 @@ public class PhysicalCapacity implements Capacity {
 
 	public Object getType() {
 		return type;
-	}	
-	
+	}
+
 }

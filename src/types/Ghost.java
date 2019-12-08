@@ -2,7 +2,7 @@ package types;
 
 import java.util.ArrayList;
 
-import system.Type;
+import abstractClass.Type;
 
 public class Ghost extends Type{
 	@SuppressWarnings("serial")
