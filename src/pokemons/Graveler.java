@@ -21,8 +21,8 @@ public class Graveler extends Pokemon{
 			55, //life
 			95, //damages
 			115, //protections
-			specialAttack, //specialAttack name
-			specialDefense, //specialDefense name
+			45, //specialAttack damages
+			45, //specialDefense protections
 			35 //speed
 		);
 	}

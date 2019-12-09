@@ -21,8 +21,8 @@ public class Rattata extends Pokemon{
 			30, //life
 			56, //damages
 			35, //protections
-			specialAttack, //specialAttack name
-			specialDefense, //specialDefense name
+			25, //specialAttack
+			35, //specialDefense
 			75 //speed
 		);
 	}

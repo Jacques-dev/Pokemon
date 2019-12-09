@@ -24,8 +24,8 @@ public class Bulbasaur extends Pokemon{
 			45, //life
 			49, //damages
 			49, //protections
-			specialAttack, //specialAttack name
-			specialDefense, //specialDefense name
+			65, //specialAttack name
+			65, //specialDefense name
 			45 //speed
 		);
 	}

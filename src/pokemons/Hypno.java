@@ -21,8 +21,8 @@ public class Hypno extends Pokemon{
 			85, //life
 			73, //damages
 			70, //protections
-			specialAttack, //specialAttack name
-			specialDefense, //specialDefense name
+			73, //specialAttack
+			115, //specialDefense
 			67 //speed
 		);
 	}

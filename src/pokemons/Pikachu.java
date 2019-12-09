@@ -1,12 +1,14 @@
 package pokemons;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import abstractClass.Capacity;
 import abstractClass.Pokemon;
+<<<<<<< Updated upstream
 import abstractClass.Type;
 import capacities.LightningFlash;
+=======
+>>>>>>> Stashed changes
 import capacities.ThunderShock;
 
 public class Pikachu extends Pokemon{
@@ -24,8 +26,8 @@ public class Pikachu extends Pokemon{
 			35, //life
 			55, //damages
 			30, //protections
-			specialAttack, //specialAttack name
-			specialDefense, //specialDefense name
+			50, //specialAttack
+			40, //specialDefense
 			90 //speed
 		);
 	}

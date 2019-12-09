@@ -10,12 +10,12 @@ public abstract class Pokemon {
 	private final int life;
 	private final int damages;
 	private final int protections;
-	private final String specialAttack;
-	private final String specialDefense;
+	private final int specialAttack;
+	private final int specialDefense;
 	private final int speed;
 	
-	public Pokemon(String name, List<Capacity> capacityInterfaces, int exp, int life, int damages, int protections, String specialAttack,
-			String specialDefense, int speed) {
+	public Pokemon(String name, List<Capacity> capacityInterfaces, int exp, int life, int damages, int protections, int specialAttack,
+			int specialDefense, int speed) {
 		this.name = name;
 		this.capacities = capacityInterfaces;
 		this.exp = exp;

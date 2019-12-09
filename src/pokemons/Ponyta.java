@@ -21,8 +21,8 @@ public class Ponyta extends Pokemon{
 			50, //life
 			85, //damages
 			55, //protections
-			specialAttack, //specialAttack name
-			specialDefense, //specialDefense name
+			65, //specialAttack
+			65, //specialDefense
 			90 //speed
 		);
 	}
