@@ -20,7 +20,7 @@ public class main {
 			e1.printStackTrace();
 		}
 		
-		t.checkPokemon("bulbasaur");
+		t.checkPokemon("pikachu");
 	}
 
 }

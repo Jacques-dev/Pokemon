@@ -1,32 +1,28 @@
 package pokemons;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import abstractClass.Capacity;
 import abstractClass.Pokemon;
-import abstractClass.Type;
-import capacities.LightningFlash;
 
-public class Pikachu extends Pokemon{
+public class Rattata extends Pokemon{
 	@SuppressWarnings("serial")
 	private final static ArrayList<Capacity> capacities = new ArrayList<Capacity>() {{ 
-		add(new LightningFlash());
+//		add(new );
 		
 	}};
 	
-	public Pikachu(String name) {
+	public Rattata(String name) {
 		super(
 			name, //name
 			capacities, //list of capacities
 			50, //exp
-			35, //life
-			55, //damages
-			30, //protections
+			30, //life
+			56, //damages
+			35, //protections
 			specialAttack, //specialAttack name
 			specialDefense, //specialDefense name
-			90 //speed
+			75 //speed
 		);
 	}
-	
 }

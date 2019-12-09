@@ -1,32 +1,28 @@
 package pokemons;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import abstractClass.Capacity;
 import abstractClass.Pokemon;
-import abstractClass.Type;
-import capacities.LightningFlash;
 
-public class Pikachu extends Pokemon{
+public class Hypno extends Pokemon{
 	@SuppressWarnings("serial")
 	private final static ArrayList<Capacity> capacities = new ArrayList<Capacity>() {{ 
-		add(new LightningFlash());
+//		add(new );
 		
 	}};
 	
-	public Pikachu(String name) {
+	public Hypno(String name) {
 		super(
 			name, //name
 			capacities, //list of capacities
 			50, //exp
-			35, //life
-			55, //damages
-			30, //protections
+			85, //life
+			73, //damages
+			70, //protections
 			specialAttack, //specialAttack name
 			specialDefense, //specialDefense name
-			90 //speed
+			67 //speed
 		);
 	}
-	
 }

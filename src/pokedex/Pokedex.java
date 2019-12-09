@@ -37,8 +37,7 @@ public class Pokedex {
 	    	String str[] =ligne.split(",");
 	    	for (int i = 0 ; i != str.length ; i++) {
 	    		
-	    		x.add(str[i]);
-	    		
+	    		x.add(str[i]); 
 	    		
 	    	}
 	    	test.add(x);
