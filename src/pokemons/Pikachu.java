@@ -7,11 +7,12 @@ import abstractClass.Capacity;
 import abstractClass.Pokemon;
 import abstractClass.Type;
 import capacities.LightningFlash;
+import capacities.ThunderShock;
 
 public class Pikachu extends Pokemon{
 	@SuppressWarnings("serial")
 	private final static ArrayList<Capacity> capacities = new ArrayList<Capacity>() {{ 
-		add(new LightningFlash());
+		add(new ThunderShock());
 		
 	}};
 	

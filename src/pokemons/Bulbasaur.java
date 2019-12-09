@@ -5,11 +5,14 @@ import java.util.ArrayList;
 import abstractClass.Capacity;
 import abstractClass.Pokemon;
 import abstractClass.Type;
+import capacities.DoubleEdge;
+import capacities.VineWhip;
 
 public class Bulbasaur extends Pokemon{
 	@SuppressWarnings("serial")
 	private final static ArrayList<Capacity> capacities = new ArrayList<Capacity>() {{ 
-//		add(new );
+		add(new VineWhip());
+		add(new DoubleEdge());
 		
 	}};
 	

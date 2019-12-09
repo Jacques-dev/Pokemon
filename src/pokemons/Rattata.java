@@ -4,11 +4,12 @@ import java.util.ArrayList;
 
 import abstractClass.Capacity;
 import abstractClass.Pokemon;
+import capacities.Bite;
 
 public class Rattata extends Pokemon{
 	@SuppressWarnings("serial")
 	private final static ArrayList<Capacity> capacities = new ArrayList<Capacity>() {{ 
-//		add(new );
+		add(new Bite());
 		
 	}};
 	

@@ -4,11 +4,12 @@ import java.util.ArrayList;
 
 import abstractClass.Capacity;
 import abstractClass.Pokemon;
+import capacities.DefenseCurl;
 
 public class Graveler extends Pokemon{
 	@SuppressWarnings("serial")
 	private final static ArrayList<Capacity> capacities = new ArrayList<Capacity>() {{ 
-//		add(new );
+		add(new DefenseCurl());
 		
 	}};
 	
