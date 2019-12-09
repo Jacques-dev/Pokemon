@@ -4,11 +4,6 @@ import java.util.ArrayList;
 
 import abstractClass.Capacity;
 import abstractClass.Pokemon;
-<<<<<<< Updated upstream
-import abstractClass.Type;
-import capacities.LightningFlash;
-=======
->>>>>>> Stashed changes
 import capacities.ThunderShock;
 
 public class Pikachu extends Pokemon{

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import abstractClass.Capacity;
 import abstractClass.Pokemon;
-import abstractClass.Type;
 import capacities.DoubleEdge;
 import capacities.VineWhip;
 
