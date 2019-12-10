@@ -11,21 +11,17 @@ public class Test {
 
 	public static void main(String[] args) {
 		
-//		PokedexApparences t = null;
-//		try {
-//			t = new PokedexApparences();
-//		} catch (IOException e1) {
-//			e1.printStackTrace();
-//		}
-//		t.checkPokemon("Pikachu");
+		PokedexApparences pa = null;
+		PokedexStats ps = null;
+		try {
+			pa = new PokedexApparences();
+			ps = new PokedexStats();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		pa.checkPokemon("Pikachu");
+		ps.checkPokemon("Pikachu");
 		
-//		PokedexStats t = null;
-//		try {
-//			t = new PokedexStats();
-//		} catch (IOException e1) {
-//			e1.printStackTrace();
-//		}
-//		t.checkPokemon("Pikachu");
 		
 //		Menus.start();
 //		Menus.pokemonSelection();

@@ -9,7 +9,9 @@ import abstractClass.Capacity;
 import abstractClass.Pokemon;
 
 public class Data implements Serializable{
-	private final Map<Pokemon,ArrayList<Capacity>> capacities = new HashMap<Pokemon,ArrayList<Capacity>>();
+	private final Map<Pokemon,ArrayList<Capacity>> team = new HashMap<Pokemon,ArrayList<Capacity>>();
 	
-	
+	public void setTeam() {
+		
+	}
 }

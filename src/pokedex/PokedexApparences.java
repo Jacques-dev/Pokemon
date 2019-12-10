@@ -48,17 +48,18 @@ public class PokedexApparences {
 	    return test;
 	}
 	
-	public void checkPokemon(String name) {
+	public boolean checkPokemon(String name) {
 		for (ArrayList array : pokedex) {
 			for (int i = 0 ; i != array.size() ; i++) {
 				
 				if (name.equals(array.get(1))) {
 					print(array);
-					return;
+					return true;
 				}
 			}
 		}
 		System.out.println("This "+name+" is unknown, sorry..");
+		return false;
 	}
 	
 	public void openPokedex() {
