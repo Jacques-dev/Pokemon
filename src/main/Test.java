@@ -3,21 +3,34 @@ package main;
 import java.io.IOException;
 
 import View.Menus;
-import pokedex.Pokedex;
+import capacities.Capacities;
+import pokedex.PokedexApparences;
+import pokedex.PokedexStats;
 
 public class Test {
 
 	public static void main(String[] args) {
 		
-//		Pokedex t = null;
+//		PokedexApparences t = null;
 //		try {
-//			t = new Pokedex();
+//			t = new PokedexApparences();
 //		} catch (IOException e1) {
 //			e1.printStackTrace();
 //		}
-//		t.checkPokemon("gengar");
+//		t.checkPokemon("Pikachu");
 		
-		Menus.start();
+//		PokedexStats t = null;
+//		try {
+//			t = new PokedexStats();
+//		} catch (IOException e1) {
+//			e1.printStackTrace();
+//		}
+//		t.checkPokemon("Pikachu");
+		
+//		Menus.start();
+//		Menus.pokemonSelection();
+		
+		Capacities.openCapacities();
 	}
 
 }

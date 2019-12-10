@@ -6,7 +6,7 @@ import capacityType.CapacityType;
 import types.Electric;
 
 public class Thunder extends Capacity{
-	private final static String name = "FlameWheel";
+	private final static String name = "Thunder";
 	private final static int power = 110;
 	private final static int precision = 70;
 	private final static Type type = new Electric();
@@ -17,7 +17,7 @@ public class Thunder extends Capacity{
 
 	@Override
 	public String toString() {
-		return "FlameWheel [name=" + name + ", power=" + power + ", precision=" + precision + ", type=" + type
+		return name + "[power=" + power + ", precision=" + precision + ", type=" + type
 				+ "]";
 	}
 

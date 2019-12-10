@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Pokedex {
+public class PokedexApparences {
 	
 	private final List<ArrayList> pokedex;
 	
-	public Pokedex() throws IOException {
+	public PokedexApparences() throws IOException {
 		this.pokedex = read();
 	}
 
@@ -59,6 +59,24 @@ public class Pokedex {
 			}
 		}
 		System.out.println("This "+name+" is unknown, sorry..");
+	}
+	
+	public void openPokedex() {
+		StringBuilder str = new StringBuilder("[");
+		for (int i = 0 ; i != pokedex.size() ; i++) {
+			str.append(pokedex.get(i).get(0)+", ");
+			str.append(pokedex.get(i).get(1)+", ");
+			str.append(pokedex.get(i).get(3)+", ");
+			str.append(pokedex.get(i).get(4)+", ");
+			str.append(pokedex.get(i).get(5)+", ");
+			try {
+				str.append(pokedex.get(i).get(5));
+			} catch (Exception e) {
+				
+			}
+			str.append("]\n");
+		}
+		System.out.println(str.toString());
 	}
 	
 	public void print(ArrayList a) {

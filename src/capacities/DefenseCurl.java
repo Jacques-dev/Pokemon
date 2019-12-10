@@ -17,7 +17,7 @@ public class DefenseCurl extends Capacity{
 
 	@Override
 	public String toString() {
-		return "[name=" + name + ", power=" + power + ", precision=" + precision + ", type=" + type
+		return name + "[power=" + power + ", precision=" + precision + ", type=" + type
 				+ "]";
 	}
 	

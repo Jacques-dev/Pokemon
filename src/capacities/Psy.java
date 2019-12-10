@@ -6,7 +6,7 @@ import capacityType.CapacityType;
 import types.Psychic;
 
 public class Psy extends Capacity{
-	private final static String name = "FlameWheel";
+	private final static String name = "Psy";
 	private final static int power = 90;
 	private final static int precision = 100;
 	private final static Type type = new Psychic();
@@ -17,7 +17,7 @@ public class Psy extends Capacity{
 
 	@Override
 	public String toString() {
-		return "FlameWheel [name=" + name + ", power=" + power + ", precision=" + precision + ", type=" + type
+		return name + "[power=" + power + ", precision=" + precision + ", type=" + type
 				+ "]";
 	}
 

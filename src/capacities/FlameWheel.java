@@ -17,7 +17,7 @@ public class FlameWheel extends Capacity{
 
 	@Override
 	public String toString() {
-		return "FlameWheel [name=" + name + ", power=" + power + ", precision=" + precision + ", type=" + type
+		return name + "[power=" + power + ", precision=" + precision + ", type=" + type
 				+ "]";
 	}
 

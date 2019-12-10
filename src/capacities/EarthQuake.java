@@ -5,19 +5,19 @@ import abstractClass.Type;
 import capacityType.CapacityType;
 import types.Ground;
 
-public class Earthquake extends Capacity{
+public class EarthQuake extends Capacity{
 	private final static String name = "Earthquake";
 	private final static int power = 100;
 	private final static int precision = 100;
 	private final static Type type = new Ground();
 	
-	public Earthquake() {
+	public EarthQuake() {
 		super(type, power, precision, CapacityType.Physical);
 	}
 
 	@Override
 	public String toString() {
-		return "FlameWheel [name=" + name + ", power=" + power + ", precision=" + precision + ", type=" + type
+		return name + "[power=" + power + ", precision=" + precision + ", type=" + type
 				+ "]";
 	}
 

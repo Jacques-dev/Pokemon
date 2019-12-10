@@ -20,7 +20,7 @@ public abstract class Type {
 
 	@Override
 	public String toString() {
-		return "Type = " + name;
+		return name;
 	}
 	
 	public ArrayList<Type> getWeakness() {
