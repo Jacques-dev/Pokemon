@@ -21,7 +21,7 @@ public class PokedexApparences {
 	    String ligne;
 	    
 	    try {
-	    	lecteurAvecBuffer = new BufferedReader(new FileReader("pokedex.txt"));
+	    	lecteurAvecBuffer = new BufferedReader(new FileReader("pokedexapparences.txt"));
         }
 	    catch(FileNotFoundException exc) {
 	    	System.out.println("Erreur d'ouverture");

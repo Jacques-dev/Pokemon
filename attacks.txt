@@ -1,4 +1,3 @@
-id,identifier,type,power,pp,accuracy,damage_class
 1,pound,normal,40,35,100,physical
 2,karate-chop,fighting,50,25,100,physical
 3,double-slap,normal,15,10,85,physical

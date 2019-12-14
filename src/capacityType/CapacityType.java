@@ -1,19 +1,25 @@
 package capacityType;
 
 public enum CapacityType {
-	Physical(false),
+	Physical {
+        public String toString() {
+            return "Physical";
+        }
+	},
 	
-	Special(false),
+	Special {
+        public String toString() {
+            return "Special";
+        }
+	},
 	
-	Status(false);
+	Statut {
+        public String toString() {
+            return "Statut";
+        }
+	};
 	
-	private final boolean type;
-	
-	private CapacityType(boolean type) {
-		this.type = type;
+	private CapacityType() {
 	}
 	
-	public boolean whatCapacityType() {
-		return type;
-	}
 }

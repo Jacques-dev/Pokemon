@@ -1,27 +1,31 @@
 package abstractClass;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Pokemon {
+public class Pokemon {
 	
 	private final String name;
-	private final List<Capacity> capacities;
-	private final int exp;
+	private final List<Type> types;
 	private final int life;
 	private final int damages;
-	private final int protections;
+	private final int defenses;
 	private final int specialAttack;
 	private final int specialDefense;
 	private final int speed;
 	
-	public Pokemon(String name, List<Capacity> capacityInterfaces, int exp, int life, int damages, int protections, int specialAttack,
+	private List<Capacity> capacities = new ArrayList<Capacity>();
+	private int exp = 0;
+	
+	
+	
+	public Pokemon(String name, List<Type> types, int life, int damages, int defenses, int specialAttack,
 			int specialDefense, int speed) {
 		this.name = name;
-		this.capacities = capacityInterfaces;
-		this.exp = exp;
+		this.types = types;
 		this.life = life;
 		this.damages = damages;
-		this.protections = protections;
+		this.defenses = defenses;
 		this.specialAttack = specialAttack;
 		this.specialDefense = specialDefense;
 		this.speed = speed;
@@ -29,10 +33,23 @@ public abstract class Pokemon {
 
 	@Override
 	public String toString() {
-		return "Pokemon [name=" + name + ", capacities=" + capacities + ", exp=" + exp + ", life=" + life + ", damages=" + damages
-				+ ", protections=" + protections + ", specialAttack=" + specialAttack + ", specialDefense="
-				+ specialDefense + ", speed=" + speed + "]";
+		StringBuilder str = new StringBuilder();
+		str.append("name : "+name+"\n");
+		str.append("types : "+types+"\n");
+		str.append("life : "+life+"\n");
+		str.append("damages : "+damages+"\n");
+		str.append("defenses : "+defenses+"\n");
+		str.append("specialAttack : "+specialAttack+"\n");
+		str.append("specialDefense : "+specialDefense+"\n");
+		str.append("speed : "+speed+"\n");
+		return str.toString();
 	}
-	
-	
+
+	public void setCapacities(ArrayList<Capacity> caps) {
+		this.capacities = caps;
+	}
+
+	public String getName() {
+		return name;
+	}
 }

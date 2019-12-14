@@ -3,7 +3,7 @@ package main;
 import java.io.IOException;
 
 import View.Menus;
-import capacities.Capacities;
+import pokedex.Attacks;
 import pokedex.PokedexApparences;
 import pokedex.PokedexStats;
 
@@ -13,20 +13,24 @@ public class Test {
 		
 		PokedexApparences pa = null;
 		PokedexStats ps = null;
+		Attacks a = null;
 		try {
 			pa = new PokedexApparences();
 			ps = new PokedexStats();
+			a = new Attacks();
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		pa.checkPokemon("Pikachu");
+//		pa.checkPokemon("Pikachu");
 		ps.checkPokemon("Pikachu");
+		
+//		a.checkAttack("pound");
 		
 		
 //		Menus.start();
 //		Menus.pokemonSelection();
 		
-		Capacities.openCapacities();
+		
 	}
 
 }
