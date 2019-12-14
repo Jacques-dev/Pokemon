@@ -52,4 +52,12 @@ public class Pokemon {
 	public String getName() {
 		return name;
 	}
+
+	public List<Type> getTypes() {
+		return types;
+	}
+
+	public void learn(Capacity c) {
+		capacities.add(c);
+	}
 }

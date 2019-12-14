@@ -86,6 +86,7 @@ private final List<Pokemon> pokedex;
 	    	
 	    	
 	    	test.add(p);
+	    	types = new ArrayList<Type>();
 	    }
 	    
 	    lecteurAvecBuffer.close();
@@ -108,6 +109,16 @@ private final List<Pokemon> pokedex;
 		for (Pokemon p : pokedex) {
 			System.out.println(p);
 		}
+	}
+
+	public Pokemon add(String str) {
+		for (Pokemon p : pokedex) {
+			
+			if (str.equals(p.getName())) {
+				return p;
+			}
+		}
+		throw new IllegalArgumentException("This pokemon deosn't exist !!");
 	}
 	
 }

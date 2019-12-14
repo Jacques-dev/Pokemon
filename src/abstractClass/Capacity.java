@@ -54,4 +54,8 @@ public class Capacity implements I_Capacities{
 		return name;
 	}
 
+	public Type getType() {
+		return type;
+	}
+
 }

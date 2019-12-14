@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import abstractClass.Capacity;
+import abstractClass.Pokemon;
 import abstractClass.Type;
 import capacityType.CapacityType;
 import lab.Convertissor;
@@ -100,10 +101,22 @@ public class Attacks {
 		return false;
 	}
 	
-	public void openPokedex() {
+	public void openPokedex(List<Type> types) {
 		for (Capacity cap : pokedex) {
-			System.out.println(cap);
+			if (types.contains(cap.getType())) {
+				System.out.println(cap);
+			}
 		}
+	}
+
+	public Capacity setCapacity(String str) {
+		for (Capacity c : pokedex) {
+			
+			if (str.equals(c.getName())) {
+				return c;
+			}
+		}
+		throw new IllegalArgumentException("This capacity deosn't exist !!");
 	}
 	
 }
