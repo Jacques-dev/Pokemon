@@ -177,24 +177,53 @@ public class Controler {
 		return false;
 	}
 	
-	public void versus(Model player1, Model player2) {
-		while (player1.getTeamSize() != 0 || player2.getTeamSize() != 0) {
+	public void versus(Model player1, Model player2) {//diancieMega Diancie - splitered-stormshards
+		while (true) {
 			Pokemon p1 = player1.getPokemon();
 			ArrayList<Capacity> c1 = player1.getCapacities();
 			
-			Pokemon p2 = player1.getPokemon();
-			ArrayList<Capacity> c2 = player1.getCapacities();
+			Pokemon p2 = player2.getPokemon();
+			ArrayList<Capacity> c2 = player2.getCapacities();
 			
-			if (fight(p1,c1,p2,c2)) {
-				player1.getTeam().remove(p1);
-			} else {
-				player2.getTeam().remove(p2);
+			switch (fight(p1,c1,p2,c2)) {
+				case 0:
+					return;
+				case 1:
+					for (HashMap.Entry<Pokemon, ArrayList<Capacity>> team : player1.getTeam().entrySet()) {
+						if (team.getKey().equals(p1)) {
+							player1.getTeam().remove(team.getKey());
+						}
+					}
+					System.out.println(p1);
+					System.out.println("team1"+player1.getTeam());
+					break;
+				case 2:
+					for (HashMap.Entry<Pokemon, ArrayList<Capacity>> team : player2.getTeam().entrySet()) {
+						if (team.getKey().getName().equals(p2.getName())) {
+							player2.getTeam().remove(team.getKey());
+						}
+					}
+					System.out.println(p2);
+					System.out.println("team2"+player2.getTeam());
+					break;
 			}
+
+			if (player1.getTeamSize() == 0) {
+				System.out.println("Player 2 won !");
+				return;
+			} 
+			if (player2.getTeamSize() == 0) {
+				System.out.println("Player 1 won !");
+				return;
+			}
+			
+			System.out.println("# New fight #");
 		}
+		
 	}
 	
 	@SuppressWarnings("resource")
-	public boolean fight(Pokemon p1, ArrayList<Capacity> capacities1, Pokemon p2, ArrayList<Capacity> capacities2) {
+	public int fight(Pokemon p1, ArrayList<Capacity> capacities1, Pokemon p2, ArrayList<Capacity> capacities2) {
 		
 		boolean player1;
 		if (p1.getSpeed() > p2.getSpeed()) {
@@ -204,7 +233,6 @@ public class Controler {
 		}
 		
 		while (true) {
-		
 			if (player1) {
 				View.capacitySelection(p1, capacities1);
 			} else {
@@ -213,37 +241,41 @@ public class Controler {
 			
 			Scanner sc = new Scanner(System.in);
 			String str = sc.nextLine();
-			if (str.equals("e")) {
-				//escape
+			if (str.equals("e")) {//escape
+				return 0;
 			}
 			Capacity c = capacities1.get(Integer.valueOf(str));
 			
 			
 			if (player1) {
-				p2 = action(c,p1);
+				p2 = action(c,p1,p2); //p1 attack with c on p2
 			} else {
-				p1 = action(c,p2);
+				p1 = action(c,p2,p1); //p2 attack with c on p1
 			}
 			
 			
-			if (p2.getLife()<=0) {
-				return true;
+			if (p1.getLife()<=0) {//p1 loose
+				return 1;
 			}
-			if (p1.getLife()<=0) {
-				return false;
+			if (p2.getLife()<=0) {//p2 loose
+				return 2;
 			}
 			
-			player1 = !player1;
+			if (player1) {
+				player1 = false;
+			} else {
+				player1 = true;
+			}
 		}
 	}
 	
-	public Pokemon action(Capacity c, Pokemon p) {
-		int x = (int) ((((p.getLevel()*0.4)+2)*p.getDamages()*c.getPower())/(p.getDefenses()*50));
-		p.setLife(x);
+	public Pokemon action(Capacity c, Pokemon p_attack, Pokemon p_defend) {
+		int x = (int) ((((p_attack.getLevel()*0.4)+2)*p_attack.getDamages()*c.getPower())/(p_defend.getDefenses()*50));
+		p_defend.setLife(x);
 		
-		View.printLife(p,x);
+		View.printLife(p_defend,x);
 		
-		return p;
+		return p_defend;
 	}
 
 }

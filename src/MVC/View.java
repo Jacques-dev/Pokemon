@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import abstractClass.Capacity;
 import abstractClass.Pokemon;
+import lab.MyMethodes;
 
 public class View {
 	
@@ -76,9 +77,10 @@ public class View {
 		player1.printTeam("1");
 		System.out.println(bar2()+"VERSUS"+bar2());
 		player2.printTeam("2");
+		MyMethodes.wait(1);
+		space();
 	}
 	public static void capacitySelection(Pokemon p, ArrayList<Capacity> c) {
-		space();
 		System.out.println(bar2()+p.getName()+bar2());
 		int i = 0;
 		for (Capacity x : c) {
@@ -88,8 +90,9 @@ public class View {
 		bar();
 	}
 	
-	public static void printLife(Pokemon p2, int x) {
-		System.out.println(p2.getName()+" has lost "+x+"hp");
-		
+	public static void printLife(Pokemon p, int x) {
+		space();
+		System.out.println(p.getName()+" has lost "+x+"hp");
+		System.out.println(p.getName()+" has now "+p.getLife());
 	}
 }

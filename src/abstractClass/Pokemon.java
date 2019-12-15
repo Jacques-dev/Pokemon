@@ -75,12 +75,14 @@ public class Pokemon  implements Serializable{
 				&& defenses == x.defenses
 				&& specialAttack == x.specialAttack
 				&& specialDefense == x.specialDefense
-				&& speed == x.speed;
+				&& speed == x.speed
+				&& capacities.equals(x.capacities)
+				&& exp == x.exp;
 	}
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(name,types,life,damages,defenses,specialAttack,specialDefense,speed);
+		return Objects.hash(name,types,life,damages,defenses,specialAttack,specialDefense,speed,capacities,exp);
 	}
 	
 	public int getPokemonLevel() {

@@ -5,6 +5,7 @@ import java.io.IOException;
 import MVC.Controler;
 import MVC.Model;
 import MVC.View;
+import lab.MyMethodes;
 
 public class Game {
 
@@ -31,6 +32,7 @@ public class Game {
 			}
 			
 			View.printVersus(player1,player2);
+			
 			
 			controler.versus(player1,player2);
 		}

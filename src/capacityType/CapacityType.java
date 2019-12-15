@@ -4,20 +4,26 @@ import java.io.Serializable;
 
 public enum CapacityType implements Serializable{
 	Physical {
-        public String toString() {
-            return "Physical";
+		private final String name = "Physical";
+        
+		public String toString() {
+            return name;
         }
 	},
 	
 	Special {
-        public String toString() {
-            return "Special";
+		private final String name = "Special";
+        
+		public String toString() {
+            return name;
         }
 	},
 	
 	Statut {
-        public String toString() {
-            return "Statut";
+		private final String name = "Statut";
+        
+		public String toString() {
+            return name;
         }
 	};
 	
