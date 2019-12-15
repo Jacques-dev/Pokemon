@@ -1,9 +1,6 @@
 package View;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
-import pokedex.PokedexApparences;
+import java.util.Scanner;
 
 public class Menus {
 	
@@ -13,9 +10,12 @@ public class Menus {
 	private static String bar2() {
 		return "--------";
 	}
+	private static void space() {
+		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n");
+	}
 	
 	public static void start() {
-		System.out.println("  '*# POKEMON #*'\n");
+		System.out.println("\n  '*# POKEMON #*'\n");
 		System.out.println(bar2()+"MENU"+bar2());
 		System.out.println("1 - Start new game");
 		System.out.println("2 - Play from save");
@@ -25,16 +25,20 @@ public class Menus {
 	}
 	
 	public static void pokemonSelection() {
-		
-		PokedexApparences t = null;
-		try {
-			t = new PokedexApparences();
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-		
+		space();
 		System.out.println(bar2()+"POKEMON SELECTION"+bar2());
-		t.openPokedex();
+		System.out.println("Press 0 if you want to stop the selection");
+	}
+	
+	@SuppressWarnings("resource")
+	public static void printRules() {
+		System.out.println(bar2()+"RULES"+bar2());
 		bar();
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		System.out.println("Press 0 to escape");
+		if (str.equals("0")) {
+			return;
+		}
 	}
 }

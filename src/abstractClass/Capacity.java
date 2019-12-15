@@ -30,7 +30,7 @@ public class Capacity implements I_Capacities{
 		this.type = Objects.requireNonNull(type);
 		this.captype = Objects.requireNonNull(captype);}
 		
-	@Override
+	
 	public String toString() {
 		StringBuilder str = new StringBuilder();
 		str.append("name : "+name+"\n");

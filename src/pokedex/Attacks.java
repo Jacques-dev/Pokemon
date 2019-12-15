@@ -93,7 +93,6 @@ public class Attacks {
 		for (Capacity cap : pokedex) {
 				
 			if (name.equals(cap.getName())) {
-				System.out.println(cap);
 				return true;
 			}
 		}
@@ -104,7 +103,7 @@ public class Attacks {
 	public void openPokedex(List<Type> types) {
 		for (Capacity cap : pokedex) {
 			if (types.contains(cap.getType())) {
-				System.out.println(cap);
+				System.out.println(cap.getName());
 			}
 		}
 	}

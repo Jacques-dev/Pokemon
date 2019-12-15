@@ -7,10 +7,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import abstractClass.Capacity;
 import abstractClass.Pokemon;
 import abstractClass.Type;
-import capacityType.CapacityType;
 import lab.Convertissor;
 
 public class PokedexStats {
@@ -20,7 +18,7 @@ private final List<Pokemon> pokedex;
 		this.pokedex = read();
 	}
 
-	@SuppressWarnings("null")
+	
 	public List<Pokemon> read() throws IOException {
 		BufferedReader lecteurAvecBuffer = null;
 	    String ligne;
@@ -97,7 +95,6 @@ private final List<Pokemon> pokedex;
 		for (Pokemon p : pokedex) {
 			
 			if (name.equals(p.getName())) {
-				System.out.println(p);
 				return true;
 			}
 		}
@@ -107,7 +104,7 @@ private final List<Pokemon> pokedex;
 	
 	public void openPokedex() {
 		for (Pokemon p : pokedex) {
-			System.out.println(p);
+			System.out.println(p.getName());
 		}
 	}
 
