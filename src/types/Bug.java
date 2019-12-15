@@ -1,6 +1,7 @@
 package types;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import abstractClass.Type;
 
@@ -23,6 +24,5 @@ public class Bug extends Type{
 	public Bug() {
 		super("Bug", weakness, strength);
 	}
-	
 	
 }

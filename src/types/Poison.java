@@ -1,6 +1,7 @@
 package types;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import abstractClass.Type;
 
@@ -21,6 +22,4 @@ public class Poison extends Type{
 	public Poison() {
 		super("Poison", weakness, strength);
 	}
-	
-	
 }

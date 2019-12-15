@@ -66,7 +66,7 @@ public class Pokemon  implements Serializable{
 	
 	@Override
 	public boolean equals(Object o) {
-		if (!(o instanceof Type)) {return false;}
+		if (!(o instanceof Pokemon)) {return false;}
 		Pokemon x = (Pokemon) o;
 		return name.equals(x.name) 
 				&& types.equals(x.types) 

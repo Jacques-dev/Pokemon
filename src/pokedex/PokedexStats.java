@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import abstractClass.Pokemon;
 import abstractClass.Type;
@@ -118,6 +119,18 @@ public class PokedexStats implements Serializable{
 			}
 		}
 		throw new IllegalArgumentException("This pokemon deosn't exist !!");
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if (!(o instanceof PokedexStats)) {return false;}
+		PokedexStats x = (PokedexStats) o;
+		return pokedex.equals(x.pokedex);
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(pokedex);
 	}
 	
 }

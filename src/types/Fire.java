@@ -1,6 +1,7 @@
 package types;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import abstractClass.Type;
 
@@ -23,6 +24,5 @@ public class Fire extends Type{
 	public Fire() {
 		super("Fire", weakness, strength);
 	}
-	
 	
 }

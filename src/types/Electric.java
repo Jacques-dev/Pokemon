@@ -1,6 +1,7 @@
 package types;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import abstractClass.Type;
 
@@ -19,6 +20,5 @@ public class Electric extends Type{
 	public Electric() {
 		super("Electric", weakness, strength);
 	}
-	
 	
 }

@@ -1,6 +1,7 @@
 package types;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import abstractClass.Type;
 
@@ -14,6 +15,4 @@ public class Normal extends Type{
 	public Normal() {
 		super("Normal", weakness);
 	}
-	
-	
 }

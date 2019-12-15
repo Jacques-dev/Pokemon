@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 @SuppressWarnings("serial")
@@ -93,6 +94,18 @@ public class PokedexApparences  implements Serializable{
 		} catch (Exception e) {
 			
 		}
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if (!(o instanceof PokedexApparences)) {return false;}
+		PokedexApparences x = (PokedexApparences) o;
+		return pokedex.equals(x.pokedex);
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(pokedex);
 	}
 	
 }

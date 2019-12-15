@@ -1,6 +1,7 @@
 package types;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import abstractClass.Type;
 
@@ -20,6 +21,4 @@ public class Ghost extends Type{
 	public Ghost() {
 		super("Ghost", weakness, strength);
 	}
-	
-	
 }

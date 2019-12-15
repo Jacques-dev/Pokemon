@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import abstractClass.Capacity;
 import abstractClass.Type;
@@ -15,7 +16,7 @@ import lab.MyMethodes;
 
 
 @SuppressWarnings("serial")
-public class Attacks  implements Serializable{
+public class Attacks implements Serializable{
 	
 	private final List<Capacity> pokedex;
 	
@@ -117,6 +118,18 @@ public class Attacks  implements Serializable{
 			}
 		}
 		throw new IllegalArgumentException("This capacity deosn't exist !!");
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if (!(o instanceof Attacks)) {return false;}
+		Attacks x = (Attacks) o;
+		return pokedex.equals(x.pokedex);
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(pokedex);
 	}
 	
 }

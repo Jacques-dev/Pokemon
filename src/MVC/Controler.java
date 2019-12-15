@@ -189,30 +189,26 @@ public class Controler {
 				case 0:
 					return;
 				case 1:
-					for (HashMap.Entry<Pokemon, ArrayList<Capacity>> team : player1.getTeam().entrySet()) {
-						if (team.getKey().equals(p1)) {
-							player1.getTeam().remove(team.getKey());
-						}
-					}
-					System.out.println(p1);
-					System.out.println("team1"+player1.getTeam());
+					System.out.println("AVANT\nteam1"+player1.getTeam());
+					
+					player1.getTeam().remove(p1);
+
+					System.out.println("APRES\nteam1"+player1.getTeam());
 					break;
 				case 2:
-					for (HashMap.Entry<Pokemon, ArrayList<Capacity>> team : player2.getTeam().entrySet()) {
-						if (team.getKey().getName().equals(p2.getName())) {
-							player2.getTeam().remove(team.getKey());
-						}
-					}
-					System.out.println(p2);
-					System.out.println("team2"+player2.getTeam());
+					System.out.println("AVANT\nteam2"+player2.getTeam());
+					
+					player2.getTeam().remove(p2);
+					
+					System.out.println("APRES\nteam2"+player2.getTeam());
 					break;
 			}
 
-			if (player1.getTeamSize() == 0) {
+			if (player1.getTeam().size() == 0) {
 				System.out.println("Player 2 won !");
 				return;
 			} 
-			if (player2.getTeamSize() == 0) {
+			if (player2.getTeam().size() == 0) {
 				System.out.println("Player 1 won !");
 				return;
 			}

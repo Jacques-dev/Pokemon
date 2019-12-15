@@ -62,7 +62,7 @@ public class Capacity implements I_Capacities, Serializable{
 	
 	@Override
 	public boolean equals(Object o) {
-		if (!(o instanceof Type)) {return false;}
+		if (!(o instanceof Capacity)) {return false;}
 		Capacity x = (Capacity) o;
 		return name.equals(x.name) 
 				&& type.equals(x.type) 

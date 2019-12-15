@@ -1,6 +1,7 @@
 package types;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import abstractClass.Type;
 
@@ -24,6 +25,4 @@ public class Grass extends Type{
 	public Grass() {
 		super("Grass", weakness, strength);
 	}
-	
-	
 }

@@ -4,9 +4,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 import abstractClass.Capacity;
 import abstractClass.Pokemon;
+import abstractClass.Type;
 import pokedex.Attacks;
 import pokedex.PokedexApparences;
 import pokedex.PokedexStats;
@@ -46,6 +48,22 @@ public class Model implements Serializable{
 		    System.out.println(team.getKey().getName() + " : [" + str.toString() + "]");
 		    
 		}
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if (!(o instanceof Model)) {return false;}
+		Model x = (Model) o;
+		return team.equals(x.team) 
+				&& pa.equals(x.pa) 
+				&& ps.equals(x.ps) 
+				&& a.equals(x.a) 
+				&& SIZE == x.SIZE;
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(team,pa,ps,a,SIZE);
 	}
 	
 	public static int getSIZE() {
