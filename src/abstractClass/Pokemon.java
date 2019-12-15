@@ -69,15 +69,12 @@ public class Pokemon  implements Serializable{
 		if (!(o instanceof Pokemon)) {return false;}
 		Pokemon x = (Pokemon) o;
 		return name.equals(x.name) 
-				&& types.equals(x.types) 
 				&& life == x.life
 				&& damages == x.damages
 				&& defenses == x.defenses
 				&& specialAttack == x.specialAttack
 				&& specialDefense == x.specialDefense
-				&& speed == x.speed
-				&& capacities.equals(x.capacities)
-				&& exp == x.exp;
+				&& speed == x.speed;
 	}
 	
 	@Override

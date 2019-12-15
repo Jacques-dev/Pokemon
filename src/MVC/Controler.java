@@ -177,7 +177,7 @@ public class Controler {
 		return false;
 	}
 	
-	public void versus(Model player1, Model player2) {//diancieMega Diancie - splitered-stormshards
+	public void versus(Model player1, Model player2) {
 		while (true) {
 			Pokemon p1 = player1.getPokemon();
 			ArrayList<Capacity> c1 = player1.getCapacities();
@@ -189,18 +189,15 @@ public class Controler {
 				case 0:
 					return;
 				case 1:
-					System.out.println("AVANT\nteam1"+player1.getTeam());
+					System.out.println("POKEMONE P1\n"+p1);
+					System.out.println("TEAM 1\n"+player1.getTeam());
+					System.out.println(player1.getTeam().containsKey(p1));
 					
-					player1.getTeam().remove(p1);
-
-					System.out.println("APRES\nteam1"+player1.getTeam());
 					break;
 				case 2:
-					System.out.println("AVANT\nteam2"+player2.getTeam());
-					
-					player2.getTeam().remove(p2);
-					
-					System.out.println("APRES\nteam2"+player2.getTeam());
+					System.out.println("POKEMONE P2\n"+p1);
+					System.out.println("TEAM 2\n"+player2.getTeam());
+					System.out.println(player2.getTeam().containsKey(p2));
 					break;
 			}
 

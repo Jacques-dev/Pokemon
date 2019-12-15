@@ -15,7 +15,7 @@ import pokedex.PokedexStats;
 
 @SuppressWarnings("serial")
 public class Model implements Serializable{
-	private final Map<Pokemon,ArrayList<Capacity>> team;
+	private Map<Pokemon,ArrayList<Capacity>> team;
 	private final PokedexApparences pa;
 	private final PokedexStats ps;
 	private final Attacks a;
@@ -50,21 +50,20 @@ public class Model implements Serializable{
 		}
 	}
 	
-	@Override
-	public boolean equals(Object o) {
-		if (!(o instanceof Model)) {return false;}
-		Model x = (Model) o;
-		return team.equals(x.team) 
-				&& pa.equals(x.pa) 
-				&& ps.equals(x.ps) 
-				&& a.equals(x.a) 
-				&& SIZE == x.SIZE;
-	}
-	
-	@Override
-	public int hashCode() {
-		return Objects.hash(team,pa,ps,a,SIZE);
-	}
+//	@Override
+//	public boolean equals(Object o) {
+//		if (!(o instanceof Model)) {return false;}
+//		Model x = (Model) o;
+//		return pa.equals(x.pa) 
+//				&& ps.equals(x.ps) 
+//				&& a.equals(x.a) 
+//				&& SIZE == x.SIZE;
+//	}
+//	
+//	@Override
+//	public int hashCode() {
+//		return Objects.hash(team,pa,ps,a,SIZE);
+//	}
 	
 	public static int getSIZE() {
 		return SIZE;
@@ -90,8 +89,13 @@ public class Model implements Serializable{
 		return team;
 	}
 	
+	public void setTeam(Map<Pokemon, ArrayList<Capacity>> t) {
+		this.team = t;
+	}
+	
 	public Pokemon getPokemon() {
 		for (HashMap.Entry<Pokemon, ArrayList<Capacity>> team : team.entrySet()) {
+			System.out.println("BORDEEEEEEEEEEEEEEEL\n"+team.getKey());
 			return team.getKey();
 		}
 		return null;
