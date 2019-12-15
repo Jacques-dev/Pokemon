@@ -1,11 +1,13 @@
 package abstractClass;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import capacityType.CapacityType;
 import interfaces.I_Capacities;
 
-public class Capacity implements I_Capacities{
+@SuppressWarnings("serial")
+public class Capacity implements I_Capacities, Serializable{
 	private final String name;
 	private final Type type; //exemple : new Electric()
 	private final int power; //15 - 300

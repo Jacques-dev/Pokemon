@@ -1,6 +1,8 @@
 package capacityType;
 
-public enum CapacityType {
+import java.io.Serializable;
+
+public enum CapacityType implements Serializable{
 	Physical {
         public String toString() {
             return "Physical";

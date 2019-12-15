@@ -1,11 +1,9 @@
 package MVC;
 
-import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 import abstractClass.Capacity;
 import abstractClass.Pokemon;
@@ -15,84 +13,29 @@ import pokedex.PokedexStats;
 
 @SuppressWarnings("serial")
 public class Model implements Serializable{
-	private final static Map<Pokemon,ArrayList<Capacity>> team = new HashMap<Pokemon,ArrayList<Capacity>>();
-	private static PokedexApparences pa = null;
-	private static PokedexStats ps = null;
-	private static Attacks a = null;
+	private final Map<Pokemon,ArrayList<Capacity>> team;;
+	private final PokedexApparences pa;
+	private final PokedexStats ps;
+	private final Attacks a;
 	private final static int teamSize = 6;
 	
-	public static void start() {
-		try {
-			pa = new PokedexApparences();
-			ps = new PokedexStats();
-			a = new Attacks();
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-		
-		Controler.start();
-		
+	public Model(Map<Pokemon,ArrayList<Capacity>> team, PokedexApparences pa, PokedexStats ps, Attacks a) {
+		this.team = team;
+		this.pa = pa;
+		this.ps = ps;
+		this.a = a;
 	}
 
-	@SuppressWarnings("resource")
-	static void setTeam() {
-		
-		ArrayList<Capacity> capacities = new ArrayList<Capacity>();
-		
-		Scanner sc = new Scanner(System.in);
-		int counter = 0;
-		while (counter != teamSize) {
-			
-			
-			
-			//Pokemon set
-			ps.openPokedex();
-			System.out.println("\nMy pokemon : ");
-			String str = sc.nextLine();
-			Pokemon p = null;
-			if (str.equals("0")) {
-				return;
-			}
-			if (ps.checkPokemon(str)) {
-				p = ps.add(str);
-			}
-			
-			
-				
-				
-			//Capacity set
-			for (int i = 0 ; i != 4 ; i++) {
-			
-				sc = new Scanner(System.in);
-				a.openPokedex(p.getTypes());
-				System.out.println("\n" + p.getName() + " - capacities : ");
-				str = sc.nextLine();
-				Capacity c = null;
-				if (str.equals("0")) {
-					break;
-				}
-				if (a.checkAttack(str)) {
-					c = a.setCapacity(str);
-				}
-				capacities.add(c);
-			}
-			
-			team.put(p,capacities);
-				
-			capacities = new ArrayList<Capacity>();
-			
-			counter++;
-			
-		}
-		
-	}
 	
-	static void reloadTeam() {
-		
-		
-	}
 	
-	public static void printMyTeam() {
+	@Override
+	public String toString() {
+		return "team=" + team;
+	}
+
+
+
+	public void printMyTeam() {
 		
 		System.out.println("\n\n\n\n\n\n\n--YOUR TEAM--");
 		
@@ -104,6 +47,11 @@ public class Model implements Serializable{
 		    System.out.println(team.getKey().getName() + " : [" + str.toString() + "]");
 		    
 		}
+		
+		System.out.println("\n>>>");
 	}
 	
+	public static int getTeamSize() {
+		return teamSize;
+	}
 }

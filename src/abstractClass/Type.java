@@ -1,9 +1,11 @@
 package abstractClass;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public abstract class Type {
+@SuppressWarnings("serial")
+public abstract class Type implements Serializable{
 	private final String name;
 	private final ArrayList<Type> weakness;
 	private final ArrayList<Type> strength;

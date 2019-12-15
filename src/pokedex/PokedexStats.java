@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,8 +12,9 @@ import abstractClass.Pokemon;
 import abstractClass.Type;
 import lab.Convertissor;
 
-public class PokedexStats {
-private final List<Pokemon> pokedex;
+@SuppressWarnings("serial")
+public class PokedexStats implements Serializable{
+	private final List<Pokemon> pokedex;
 	
 	public PokedexStats() throws IOException {
 		this.pokedex = read();
@@ -108,7 +110,7 @@ private final List<Pokemon> pokedex;
 		}
 	}
 
-	public Pokemon add(String str) {
+	public Pokemon stringToPokemon(String str) {
 		for (Pokemon p : pokedex) {
 			
 			if (str.equals(p.getName())) {

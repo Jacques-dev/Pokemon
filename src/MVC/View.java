@@ -10,7 +10,7 @@ public class View {
 	private static String bar2() {
 		return "--------";
 	}
-	private static void space() {
+	static void space() {
 		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n");
 	}
 	
@@ -50,5 +50,12 @@ public class View {
 		System.out.println("3 - Rules");
 		System.out.println("0 - Quit");
 		bar();
+	}
+	
+	public static void save() {
+		space();
+		System.out.println(bar2()+"SAVE"+bar2());
+		space();
+		System.out.println(">>>");
 	}
 }

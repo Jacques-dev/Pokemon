@@ -1,9 +1,11 @@
 package abstractClass;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pokemon {
+@SuppressWarnings("serial")
+public class Pokemon  implements Serializable{
 	
 	private final String name;
 	private final List<Type> types;
