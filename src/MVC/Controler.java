@@ -61,7 +61,7 @@ public class Controler {
 		
 		Scanner sc = new Scanner(System.in);
 		int counter = 0;
-		while (counter != Model.getTeamSize()) {
+		while (counter != Model.getSIZE()) {
 			
 			
 			
@@ -158,6 +158,92 @@ public class Controler {
 			View.space();
 			System.exit(0);
 		}
+	}
+	
+	public boolean choice(Model data) {
+		View.choice();
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		switch (str) {
+			case "1":
+				return true;
+			case "2":
+				View.printRules();
+				break;
+			case "0":
+				menu(data);
+		}
+		return false;
+	}
+	
+	public void versus(Model player1, Model player2) {
+		while (player1.getTeamSize() != 0 || player2.getTeamSize() != 0) {
+			Pokemon p1 = player1.getPokemon();
+			ArrayList<Capacity> c1 = player1.getCapacities();
+			
+			Pokemon p2 = player1.getPokemon();
+			ArrayList<Capacity> c2 = player1.getCapacities();
+			
+			if (fight(p1,c1,p2,c2)) {
+				player1.getTeam().remove(p1);
+			} else {
+				player2.getTeam().remove(p2);
+			}
+		}
+	}
+	
+	@SuppressWarnings("resource")
+	public boolean fight(Pokemon p1, ArrayList<Capacity> capacities1, Pokemon p2, ArrayList<Capacity> capacities2) {
+		
+		boolean player1;
+		if (p1.getSpeed() > p2.getSpeed()) {
+			player1 = true;
+		} else {
+			player1 = false;
+		}
+		
+		while (true) {
+		
+			if (player1) {
+				View.capacitySelection(p1, capacities1);
+			} else {
+				View.capacitySelection(p2, capacities2);
+			}
+			
+			Scanner sc = new Scanner(System.in);
+			String str = sc.nextLine();
+			if (str.equals("e")) {
+				//escape
+			}
+			Capacity c = capacities1.get(Integer.valueOf(str));
+			
+			
+			if (player1) {
+				p2 = action(c,p1);
+			} else {
+				p1 = action(c,p2);
+			}
+			
+			
+			if (p2.getLife()<=0) {
+				return true;
+			}
+			if (p1.getLife()<=0) {
+				return false;
+			}
+			
+			player1 = !player1;
+		}
+	}
+	
+	public Pokemon action(Capacity c, Pokemon p) {
+		int x = (int) ((((p.getLevel()*0.4)+2)*p.getDamages()*c.getPower())/(p.getDefenses()*50));
+		p.setLife(x);
+		
+		View.printLife(p,x);
+		
+		return p;
 	}
 
 }

@@ -10,7 +10,7 @@ public class Pokemon  implements Serializable{
 	
 	private final String name;
 	private final List<Type> types;
-	private final int life;
+	private int life;
 	private final int damages;
 	private final int defenses;
 	private final int specialAttack;
@@ -89,5 +89,29 @@ public class Pokemon  implements Serializable{
 	
 	public void levelUp(int x) {
 		exp+=x;
+	}
+	
+	public int getSpeed() {
+		return speed;
+	}
+
+	public int getLife() {
+		return life;
+	}
+
+	public void setLife(int x) {
+		life = life - x;
+	}
+
+	public double getLevel() {
+		return exp;
+	}
+
+	public double getDamages() {
+		return damages;
+	}
+
+	public int getDefenses() {
+		return defenses;
 	}
 }

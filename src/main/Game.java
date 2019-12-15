@@ -1,10 +1,10 @@
 package main;
 
 import java.io.IOException;
-import java.util.Scanner;
 
 import MVC.Controler;
 import MVC.Model;
+import MVC.View;
 
 public class Game {
 
@@ -12,27 +12,31 @@ public class Game {
 		
 		Controler controler = new Controler();
 		
-		Model data = null;
+		Model player1 = null, player2 = null;
 		
 		try {
-			data = controler.start();
+			player1 = controler.start();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		data.printMyTeam();
+		player1.printTeam("");
 		
-		@SuppressWarnings("resource")
-		Scanner sc = new Scanner(System.in);
-		String str = sc.nextLine();
 		
-		while(true) {
 			
-			if (str.equals("0")) {
-				controler.menu(data);
+		if (controler.choice(player1)) {
+			try {
+				player2 = controler.start();
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-			System.out.println("(Press 0 to open Menu) >>>");
-			str = sc.nextLine();
+			
+			View.printVersus(player1,player2);
+			
+			controler.versus(player1,player2);
 		}
+		
+		
+		
 	}
 
 }

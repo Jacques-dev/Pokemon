@@ -77,4 +77,9 @@ public class Capacity implements I_Capacities, Serializable{
 		return Objects.hash(name,type,power,pp,accuracy,captype);
 	}
 
+
+	public double getPower() {
+		return power;
+	}
+
 }

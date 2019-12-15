@@ -1,6 +1,10 @@
 package MVC;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import abstractClass.Capacity;
+import abstractClass.Pokemon;
 
 public class View {
 	
@@ -17,8 +21,8 @@ public class View {
 	public static void start() {
 		System.out.println("\n  '*# POKEMON #*'\n");
 		System.out.println(bar2()+"MENU"+bar2());
-		System.out.println("1 - Start new game");
-		System.out.println("2 - Play from save");
+		System.out.println("1 - Select your team");
+		System.out.println("2 - Load your team");
 		System.out.println("3 - Rules");
 		System.out.println("0 - Quit");
 		bar();
@@ -56,5 +60,36 @@ public class View {
 		space();
 		System.out.println(bar2()+"SAVE"+bar2());
 		space();
+	}
+	
+	public static void choice() {
+		space();
+		System.out.println(bar2()+"GAME"+bar2());
+		System.out.println("1 - Fight");
+		System.out.println("2 - Rules");
+		System.out.println("0 - Menu");
+		bar();
+	}
+	
+	public static void printVersus(Model player1, Model player2) {
+		space();
+		player1.printTeam("1");
+		System.out.println(bar2()+"VERSUS"+bar2());
+		player2.printTeam("2");
+	}
+	public static void capacitySelection(Pokemon p, ArrayList<Capacity> c) {
+		space();
+		System.out.println(bar2()+p.getName()+bar2());
+		int i = 0;
+		for (Capacity x : c) {
+			System.out.println(i+" - "+x.getName());
+			i++;
+		}
+		bar();
+	}
+	
+	public static void printLife(Pokemon p2, int x) {
+		System.out.println(p2.getName()+" has lost "+x+"hp");
+		
 	}
 }
