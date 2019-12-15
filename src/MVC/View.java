@@ -1,8 +1,8 @@
-package View;
+package MVC;
 
 import java.util.Scanner;
 
-public class Menus {
+public class View {
 	
 	private static void bar() {
 		System.out.println("--------------------");
@@ -40,5 +40,15 @@ public class Menus {
 		if (str.equals("0")) {
 			return;
 		}
+	}
+	
+	public static void menu() {
+		space();
+		System.out.println(bar2()+"MENU"+bar2());
+		System.out.println("1 - Continue");
+		System.out.println("2 - Save");
+		System.out.println("3 - Rules");
+		System.out.println("0 - Quit");
+		bar();
 	}
 }
