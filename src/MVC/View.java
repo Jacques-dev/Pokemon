@@ -56,6 +56,5 @@ public class View {
 		space();
 		System.out.println(bar2()+"SAVE"+bar2());
 		space();
-		System.out.println(">>>");
 	}
 }

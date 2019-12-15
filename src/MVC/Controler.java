@@ -20,6 +20,7 @@ import pokedex.PokedexStats;
 public class Controler {
 	
 	
+	@SuppressWarnings("resource")
 	public Model start() throws IOException {
 		View.start();
 		Scanner sc = new Scanner(System.in);
@@ -132,6 +133,7 @@ public class Controler {
 		return null;
 	}
 
+	@SuppressWarnings("resource")
 	public void menu(Model data) {
 		View.menu();
 		Scanner sc = new Scanner(System.in);

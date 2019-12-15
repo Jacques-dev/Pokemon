@@ -4,8 +4,9 @@ import java.util.ArrayList;
 
 import abstractClass.Type;
 
+@SuppressWarnings("serial")
 public class Fire extends Type{
-	@SuppressWarnings("serial")
+
 	private final static ArrayList<Type> strength = new ArrayList<Type>() {{ 
 		add(new Bug());
 		add(new Grass());
@@ -13,7 +14,6 @@ public class Fire extends Type{
 		add(new Steel());
 	}};
 	
-	@SuppressWarnings("serial")
 	private final static ArrayList<Type> weakness = new ArrayList<Type>() {{ 
 		add(new Ground());
 		add(new Rock());

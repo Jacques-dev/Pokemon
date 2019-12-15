@@ -12,13 +12,13 @@ import java.util.List;
 @SuppressWarnings("serial")
 public class PokedexApparences  implements Serializable{
 	
-	private final List<ArrayList> pokedex;
+	private final List<ArrayList<String>> pokedex;
 	
 	public PokedexApparences() throws IOException {
 		this.pokedex = read();
 	}
 
-	public List<ArrayList> read() throws IOException {
+	public List<ArrayList<String>> read() throws IOException {
 		BufferedReader lecteurAvecBuffer = null;
 	    String ligne;
 	    
@@ -31,7 +31,7 @@ public class PokedexApparences  implements Serializable{
 	    
 	    ArrayList<String> x = new ArrayList<>();
 	    
-		List<ArrayList> test = new ArrayList<>();
+		List<ArrayList<String>> test = new ArrayList<>();
 	    
 	    
 	    while ((ligne = lecteurAvecBuffer.readLine()) != null) {
@@ -51,7 +51,7 @@ public class PokedexApparences  implements Serializable{
 	}
 	
 	public boolean checkPokemon(String name) {
-		for (ArrayList array : pokedex) {
+		for (ArrayList<String> array : pokedex) {
 			for (int i = 0 ; i != array.size() ; i++) {
 				
 				if (name.equals(array.get(1))) {
@@ -82,7 +82,7 @@ public class PokedexApparences  implements Serializable{
 		System.out.println(str.toString());
 	}
 	
-	public void print(ArrayList a) {
+	public void print(ArrayList<String> a) {
 		System.out.println("id : "+a.get(0));
 		System.out.println("name : "+a.get(1));
 		System.out.println("height : "+a.get(3));

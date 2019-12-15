@@ -2,7 +2,6 @@ package MVC;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
 import abstractClass.Capacity;
@@ -53,5 +52,17 @@ public class Model implements Serializable{
 	
 	public static int getTeamSize() {
 		return teamSize;
+	}
+	
+	public PokedexApparences getPa() {
+		return pa;
+	}
+
+	public PokedexStats getPs() {
+		return ps;
+	}
+
+	public Attacks getA() {
+		return a;
 	}
 }

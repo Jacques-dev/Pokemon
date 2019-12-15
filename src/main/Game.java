@@ -21,6 +21,7 @@ public class Game {
 		}
 		data.printMyTeam();
 		
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		String str = sc.nextLine();
 		
@@ -28,9 +29,8 @@ public class Game {
 			
 			if (str.equals("0")) {
 				controler.menu(data);
-				str = sc.nextLine();
 			}
-			System.out.println(">>>");
+			System.out.println("(Press 0 to open Menu) >>>");
 			str = sc.nextLine();
 		}
 	}

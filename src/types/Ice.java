@@ -4,8 +4,9 @@ import java.util.ArrayList;
 
 import abstractClass.Type;
 
+@SuppressWarnings("serial")
 public class Ice extends Type{
-	@SuppressWarnings("serial")
+
 	private final static ArrayList<Type> strength = new ArrayList<Type>() {{ 
 		add(new Flying());
 		add(new Ground());
@@ -13,7 +14,6 @@ public class Ice extends Type{
 		add(new Dragon());
 	}};
 	
-	@SuppressWarnings("serial")
 	private final static ArrayList<Type> weakness = new ArrayList<Type>() {{ 
 		add(new Fighting());
 		add(new Rock());

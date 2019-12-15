@@ -82,4 +82,12 @@ public class Pokemon  implements Serializable{
 	public int hashCode() {
 		return Objects.hash(name,types,life,damages,defenses,specialAttack,specialDefense,speed);
 	}
+	
+	public int getPokemonLevel() {
+		return exp;
+	}
+	
+	public void levelUp(int x) {
+		exp+=x;
+	}
 }

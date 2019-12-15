@@ -93,7 +93,7 @@ public class PokedexStats implements Serializable{
 	    return test;
 	}
 	
-	public Boolean checkPokemon(String name) {
+	public boolean checkPokemon(String name) {
 		for (Pokemon p : pokedex) {
 			
 			if (name.equals(p.getName())) {
