@@ -21,8 +21,15 @@ import types.Rock;
 import types.Steel;
 import types.Water;
 
-public class Convertissor {
+public class MyMethodes {
 	
+	public static void wait(int x) {
+		try {
+		   Thread.sleep(x*1000) ;
+		}  catch (InterruptedException e) {
+		    // gestion de l'erreur
+		}
+	}
 	
 	public static Type stringToType(String s) {
 		if (s.equals("fighting") || s.equals("Fighting")) {

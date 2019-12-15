@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 import abstractClass.Capacity;
 import abstractClass.Pokemon;
-import lab.TimeControl;
+import lab.MyMethodes;
 import pokedex.Attacks;
 import pokedex.PokedexApparences;
 import pokedex.PokedexStats;
@@ -27,7 +27,7 @@ public class Controler {
 		switch (str) {
 		case "1":
 			View.pokemonSelection();
-			TimeControl.wait(2);
+			MyMethodes.wait(2);
 			Model data = setTeam();
 			return data;
 		case "2":
@@ -143,7 +143,7 @@ public class Controler {
 			try {
 				save(data);
 				View.save();
-				TimeControl.wait(2);
+				MyMethodes.wait(2);
 				
 			} catch (IOException e) {
 				e.printStackTrace();

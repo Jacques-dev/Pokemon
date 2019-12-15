@@ -12,7 +12,7 @@ import abstractClass.Capacity;
 import abstractClass.Pokemon;
 import abstractClass.Type;
 import capacityType.CapacityType;
-import lab.Convertissor;
+import lab.MyMethodes;
 
 
 @SuppressWarnings("serial")
@@ -54,14 +54,14 @@ public class Attacks  implements Serializable{
 		    			name = str[i];
 		    			break;
 		    		case 2:
-		    			type = Convertissor.stringToType(str[i]);
+		    			type = MyMethodes.stringToType(str[i]);
 		    			break;
 		    		case 3:
 		    			if (str[i].equals("")) {
 		    				power = 0;
 		    				break;
 		    			}
-		    			power = Convertissor.roundUp(Integer.valueOf(str[i]));
+		    			power = MyMethodes.roundUp(Integer.valueOf(str[i]));
 		    			break;
 		    		case 4:
 		    			if (str[i].equals("")) {
@@ -78,7 +78,7 @@ public class Attacks  implements Serializable{
 		    			accuracy = Integer.valueOf(str[i]);
 		    			break;
 		    		case 6:
-		    			captype = Convertissor.stringToClassType(str[i]);
+		    			captype = MyMethodes.stringToClassType(str[i]);
 		    			break;
 	    		}
 	    	}

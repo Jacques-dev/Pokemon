@@ -10,7 +10,7 @@ import java.util.List;
 
 import abstractClass.Pokemon;
 import abstractClass.Type;
-import lab.Convertissor;
+import lab.MyMethodes;
 
 @SuppressWarnings("serial")
 public class PokedexStats implements Serializable{
@@ -53,13 +53,13 @@ public class PokedexStats implements Serializable{
 		    			name = str[i];
 		    			break;
 		    		case 2:
-		    			types.add(Convertissor.stringToType(str[i]));
+		    			types.add(MyMethodes.stringToType(str[i]));
 		    			break;
 		    		case 3:
 		    			if (str[i].equals("")) {
 		    				break;
 		    			} else {
-			    			types.add(Convertissor.stringToType(str[i]));
+			    			types.add(MyMethodes.stringToType(str[i]));
 			    			break;
 		    			}
 		    		case 5:

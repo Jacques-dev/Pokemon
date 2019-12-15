@@ -3,6 +3,7 @@ package abstractClass;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @SuppressWarnings("serial")
 public class Pokemon  implements Serializable{
@@ -61,5 +62,24 @@ public class Pokemon  implements Serializable{
 
 	public void learn(Capacity c) {
 		capacities.add(c);
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if (!(o instanceof Type)) {return false;}
+		Pokemon x = (Pokemon) o;
+		return name.equals(x.name) 
+				&& types.equals(x.types) 
+				&& life == x.life
+				&& damages == x.damages
+				&& defenses == x.defenses
+				&& specialAttack == x.specialAttack
+				&& specialDefense == x.specialDefense
+				&& speed == x.speed;
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(name,types,life,damages,defenses,specialAttack,specialDefense,speed);
 	}
 }

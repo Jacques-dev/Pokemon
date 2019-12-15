@@ -59,5 +59,22 @@ public class Capacity implements I_Capacities, Serializable{
 	public Type getType() {
 		return type;
 	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if (!(o instanceof Type)) {return false;}
+		Capacity x = (Capacity) o;
+		return name.equals(x.name) 
+				&& type.equals(x.type) 
+				&& power == x.power
+				&& pp == x.pp
+				&& accuracy == x.accuracy
+				&& captype.equals(x.captype);
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(name,type,power,pp,accuracy,captype);
+	}
 
 }
