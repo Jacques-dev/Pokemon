@@ -81,7 +81,7 @@ public class View {
 		space();
 	}
 	public static void capacitySelection(Pokemon p, ArrayList<Capacity> c) {
-		System.out.println(bar2()+p.getName()+bar2());
+		System.out.println(bar2()+p.getName()+" turn"+bar2());
 		int i = 0;
 		for (Capacity x : c) {
 			System.out.println(i+" - "+x.getName());
@@ -94,5 +94,16 @@ public class View {
 		space();
 		System.out.println(p.getName()+" has lost "+x+"hp");
 		System.out.println(p.getName()+" has now "+p.getLife());
+	}
+	
+	public static void selectYourPokemon(ArrayList<Pokemon> team) {
+		int x = 0;
+		space();
+		System.out.println(bar2()+"Witch will have to fight ???"+bar2());
+		for (Pokemon p : team) {
+			System.out.println(x + " - " + p.getName());
+			x++;
+		}
+		bar();
 	}
 }

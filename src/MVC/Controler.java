@@ -179,7 +179,7 @@ public class Controler {
 			
 			Pokemon p2 = player2.getPokemon();
 			ArrayList<Capacity> c2 = p2.getCapacities();
-			
+			View.space();
 			switch (fight(p1,c1,p2,c2)) {
 				case 0:
 					return;

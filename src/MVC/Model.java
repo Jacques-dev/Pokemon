@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Scanner;
 
 import abstractClass.Capacity;
 import abstractClass.Pokemon;
@@ -77,8 +78,23 @@ public class Model implements Serializable{
 	}
 	
 	public Pokemon getPokemon() {
-		for (Pokemon p : team) {
-			return p;
+		View.selectYourPokemon(team);
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		switch (str) {
+			case "0":
+				return team.get(0);
+			case "1":
+				return team.get(1);
+			case "2":
+				return team.get(2);
+			case "3":
+				return team.get(3);
+			case "4":
+				return team.get(4);
+			case "5":
+				return team.get(5);
 		}
 		throw new IllegalStateException("There is no pokemon in this team");
 	}
