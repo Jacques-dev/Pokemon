@@ -52,12 +52,10 @@ public class Controler {
 	@SuppressWarnings("resource")
 	public Model setTeam() throws IOException {
 		
-		Map<Pokemon,ArrayList<Capacity>> team = new HashMap<Pokemon,ArrayList<Capacity>>();
+		ArrayList<Pokemon> team = new ArrayList<Pokemon>();
 		PokedexApparences pa = new PokedexApparences();
 		PokedexStats ps = new PokedexStats();
 		Attacks a = new Attacks();
-		
-		ArrayList<Capacity> capacities = new ArrayList<Capacity>();
 		
 		Scanner sc = new Scanner(System.in);
 		int counter = 0;
@@ -93,13 +91,10 @@ public class Controler {
 				}
 				if (a.checkAttack(str)) {
 					c = a.setCapacity(str);
+					p.learn(c);
 				}
-				capacities.add(c);
 			}
-			
-			team.put(p,capacities);
-				
-			capacities = new ArrayList<Capacity>();
+			team.add(p);
 			
 			counter++;
 			
@@ -180,33 +175,30 @@ public class Controler {
 	public void versus(Model player1, Model player2) {
 		while (true) {
 			Pokemon p1 = player1.getPokemon();
-			ArrayList<Capacity> c1 = player1.getCapacities();
+			ArrayList<Capacity> c1 = p1.getCapacities();
 			
 			Pokemon p2 = player2.getPokemon();
-			ArrayList<Capacity> c2 = player2.getCapacities();
+			ArrayList<Capacity> c2 = p2.getCapacities();
 			
 			switch (fight(p1,c1,p2,c2)) {
 				case 0:
 					return;
-				case 1:
-					System.out.println("POKEMONE P1\n"+p1);
-					System.out.println("TEAM 1\n"+player1.getTeam());
-					System.out.println(player1.getTeam().containsKey(p1));
-					
+				case 1: //pokemon player1 died
+					player1.getTeam().remove(p1);
 					break;
-				case 2:
-					System.out.println("POKEMONE P2\n"+p1);
-					System.out.println("TEAM 2\n"+player2.getTeam());
-					System.out.println(player2.getTeam().containsKey(p2));
+				case 2: //pokemon player2 died
+					player2.getTeam().remove(p2);
 					break;
 			}
 
 			if (player1.getTeam().size() == 0) {
 				System.out.println("Player 2 won !");
+				MyMethodes.wait(3);
 				return;
 			} 
 			if (player2.getTeam().size() == 0) {
 				System.out.println("Player 1 won !");
+				MyMethodes.wait(3);
 				return;
 			}
 			

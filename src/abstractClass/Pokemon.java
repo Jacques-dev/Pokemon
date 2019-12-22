@@ -16,8 +16,7 @@ public class Pokemon  implements Serializable{
 	private final int specialAttack;
 	private final int specialDefense;
 	private final int speed;
-	
-	private List<Capacity> capacities = new ArrayList<Capacity>();
+	private ArrayList<Capacity> capacities = new ArrayList<Capacity>();
 	private int exp = 0;
 	
 	
@@ -50,6 +49,10 @@ public class Pokemon  implements Serializable{
 
 	public void setCapacities(ArrayList<Capacity> caps) {
 		this.capacities = caps;
+	}
+	
+	public ArrayList<Capacity> getCapacities() {
+		return capacities;
 	}
 
 	public String getName() {
@@ -113,4 +116,5 @@ public class Pokemon  implements Serializable{
 	public int getDefenses() {
 		return defenses;
 	}
+
 }
