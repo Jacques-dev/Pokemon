@@ -53,13 +53,7 @@ public class PokedexStats implements Serializable{
 	    		switch (i) {
 	    			case 0:
 	    				number = Integer.valueOf(str[i]);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 	    				System.out.println(number);
-=======
->>>>>>> master
->>>>>>> master
 	    				break;
 		    		case 1:
 		    			name = str[i];
