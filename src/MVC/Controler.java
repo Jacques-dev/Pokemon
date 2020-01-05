@@ -29,7 +29,7 @@ public class Controler {
 		case "1":
 			View.pokemonSelection();
 			MyMethodes.wait(2);
-			Model data = setEnnemy(6);
+			Model data = setTeam();
 			return data;
 		case "2":
 			try {
