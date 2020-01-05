@@ -8,6 +8,7 @@ import java.util.Objects;
 @SuppressWarnings("serial")
 public class Pokemon  implements Serializable{
 	
+	private final int number;
 	private final String name;
 	private final List<Type> types;
 	private int life;
@@ -17,12 +18,13 @@ public class Pokemon  implements Serializable{
 	private final int specialDefense;
 	private final int speed;
 	private ArrayList<Capacity> capacities = new ArrayList<Capacity>();
-	private int exp = 0;
+	private int exp = 100;
 	
 	
 	
-	public Pokemon(String name, List<Type> types, int life, int damages, int defenses, int specialAttack,
+	public Pokemon(int number, String name, List<Type> types, int life, int damages, int defenses, int specialAttack,
 			int specialDefense, int speed) {
+		this.number = number;
 		this.name = name;
 		this.types = types;
 		this.life = life;
@@ -36,6 +38,7 @@ public class Pokemon  implements Serializable{
 	@Override
 	public String toString() {
 		StringBuilder str = new StringBuilder();
+		str.append("number : "+number+"\n");
 		str.append("name : "+name+"\n");
 		str.append("types : "+types+"\n");
 		str.append("life : "+life+"\n");
@@ -55,6 +58,10 @@ public class Pokemon  implements Serializable{
 		return capacities;
 	}
 
+	public int getNumber() {
+		return number;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -72,6 +79,7 @@ public class Pokemon  implements Serializable{
 		if (!(o instanceof Pokemon)) {return false;}
 		Pokemon x = (Pokemon) o;
 		return name.equals(x.name) 
+				&& number == x.number
 				&& life == x.life
 				&& damages == x.damages
 				&& defenses == x.defenses
