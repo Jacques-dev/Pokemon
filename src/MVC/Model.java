@@ -35,8 +35,10 @@ public class Model implements Serializable{
 		return "team=" + team;
 	}
 
-
-
+	/**
+     * Display all the pokemons of a model with their capacities
+     * @param String "x" representing the team's name
+     */
 	public void printTeam(String x) {
 		
 		System.out.println("--TEAM "+x+"--");
@@ -77,6 +79,10 @@ public class Model implements Serializable{
 		this.team = t;
 	}
 	
+	/**
+     * Display all the pokemons contained in a model to choose one 
+     * @return Pokemon chosen by the user
+     */
 	public Pokemon getPokemon() {
 		View.selectYourPokemon(team);
 		@SuppressWarnings("resource")

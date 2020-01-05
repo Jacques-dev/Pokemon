@@ -44,10 +44,6 @@ public class Game {
 
 							player2 = controler.setEnnemy(5);
 
-							player2 = controler.setEnnemy(5);
-
-							player2 = controler.setEnnemy(1);
-
 						} catch (IOException e) {
 							e.printStackTrace();
 						}
@@ -59,10 +55,6 @@ public class Game {
 					try {
 
 					player2 = controler.setEnnemy(6);
-
-					player2 = controler.setEnnemy(6);
-
-					player2 = controler.setEnnemy(2);
 
 					} catch (IOException e) {
 						e.printStackTrace();
@@ -79,10 +71,6 @@ public class Game {
 
 						player2 = controler.setEnnemy(6);
 
-						player2 = controler.setEnnemy(6);
-
-						player2 = controler.setEnnemy(1);
-
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
@@ -94,10 +82,6 @@ public class Game {
 				try {
 
 				player2 = controler.setEnnemy(6);
-
-				player2 = controler.setEnnemy(6);
-
-				player2 = controler.setEnnemy(2);
 
 				} catch (IOException e) {
 					e.printStackTrace();

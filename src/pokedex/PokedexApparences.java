@@ -19,6 +19,10 @@ public class PokedexApparences  implements Serializable{
 		this.pokedex = read();
 	}
 
+	/**
+     * 
+     * @return List<ArrayList<String>> containing all the pokemon attributes in the pokedexapparences.txt file
+     */
 	public List<ArrayList<String>> read() throws IOException {
 		BufferedReader lecteurAvecBuffer = null;
 	    String ligne;
@@ -51,6 +55,11 @@ public class PokedexApparences  implements Serializable{
 	    return test;
 	}
 	
+	/**
+     * Verify if a pokemon is contained in the pokedexapparences.txt file
+     * @param String "name" representing a pokemon name
+     * @return true if the pokemon entered is known in the pokedexapparences.txt file
+     */
 	public boolean checkPokemon(String name) {
 		for (ArrayList<String> array : pokedex) {
 			for (int i = 0 ; i != array.size() ; i++) {
@@ -65,6 +74,9 @@ public class PokedexApparences  implements Serializable{
 		return false;
 	}
 	
+	/**
+     * Display all the pokemons in the pokedexapparences.txt file and their attributes
+     */
 	public void openPokedex() {
 		StringBuilder str = new StringBuilder("[");
 		for (int i = 0 ; i != pokedex.size() ; i++) {

@@ -26,6 +26,9 @@ public class View {
 		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n");
 	}
 	
+	/**
+     * Display the first menu
+     */
 	public static void start() {
 		System.out.println("\n  '*# POKEMON #*'\n");
 		System.out.println(bar2()+"MENU"+bar2());
@@ -43,6 +46,9 @@ public class View {
 		System.out.println("Press 0 if you want to stop the selection");
 	}
 	
+	/**
+     * Display the rules of the game
+     */
 	@SuppressWarnings("resource")
 	public static void printRules() {
 		System.out.println(bar2()+"RULES"+bar2());
@@ -50,6 +56,7 @@ public class View {
 		return;
 	}
 	
+
 	public static void menu() {
 		space();
 		System.out.println(bar2()+"MENU"+bar2());
@@ -66,6 +73,9 @@ public class View {
 		space();
 	}
 	
+	/**
+     * Display the post-selection menu
+     */
 	public static void choice() {
 		space();
 		System.out.println(bar2()+"GAME"+bar2());
@@ -77,6 +87,10 @@ public class View {
 		bar();
 	}
 	
+	/**
+     * Display the versus screen
+     * @param Model "player1", Model "player 2"
+     */
 	public static void printVersus(Model player1, Model player2) {
 		space();
 		player1.printTeam("1");
@@ -85,6 +99,11 @@ public class View {
 		MyMethodes.wait(3);
 		space();
 	}
+	
+	/**
+     * Display in-fight possible actions
+     * @param Pokemon "p", ArrayList<Capacity> "c"
+     */
 	public static void capacitySelection(Pokemon p, ArrayList<Capacity> c) {
 		System.out.println(bar2()+p.getName()+" turn"+bar2());
 		int i = 0;
@@ -97,19 +116,23 @@ public class View {
 
 		//System.out.println("a - oneshot");
 
-		//System.out.println("a - oneshot");
-
-		System.out.println("a - oneshot");
-
 		System.out.println("e - escape (loose)");
 	}
 	
+	/**
+     * Display the damages taken by a pokemon and his hp
+     * @param Pokemon "p", int "x" representing the damages taken
+     */
 	public static void printLife(Pokemon p, int x) {
 		space();
 		System.out.println(p.getName()+" has lost "+x+"hp");
 		System.out.println(p.getName()+" has now "+p.getLife());
 	}
 	
+	/**
+     * Display the team pokemons selection
+     * @param ArrayList<Pokemon> team all the pokemons of a Model
+     */
 	public static void selectYourPokemon(ArrayList<Pokemon> team) {
 		int x = 0;
 		space();

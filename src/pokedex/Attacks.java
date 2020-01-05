@@ -25,6 +25,10 @@ public class Attacks implements Serializable{
 		this.pokedex = read();
 	}
 
+	/**
+     * 
+     * @return List<Capacity> containing all the capacities in the attack.txt file
+     */
 	public List<Capacity> read() throws IOException {
 		BufferedReader lecteurAvecBuffer = null;
 	    String ligne;
@@ -95,6 +99,11 @@ public class Attacks implements Serializable{
 	    return test;
 	}
 	
+	/**
+     * Verify if a capacity is contained in the attack.txt file
+     * @param String "name" representing a capacity name
+     * @return true if the capacity entered is known in the attacks.txt file
+     */
 	public boolean checkAttack(String name) {
 		for (Capacity cap : pokedex) {
 				
@@ -106,6 +115,10 @@ public class Attacks implements Serializable{
 		return false;
 	}
 	
+	/**
+     * Display the capacities of normal type + types entered as parameters
+     * @param List<Type> "types" representing capacities of what type we want to display.
+     */
 	public void openPokedex(List<Type> types) {
 		types.add(new Normal());
 		for (Capacity cap : pokedex) {
@@ -115,6 +128,11 @@ public class Attacks implements Serializable{
 		}
 	}
 
+	/**
+     * 
+     * @param String "str" the name of the capacity we want to return
+     * @return Capacity having the same name as str parameter
+     */
 	public Capacity setCapacity(String str) {
 		for (Capacity c : pokedex) {
 			
@@ -125,6 +143,11 @@ public class Attacks implements Serializable{
 		throw new IllegalArgumentException("This capacity deosn't exist !!");
 	}
 	
+	/**
+     * 
+     * @param int "number" the number of the capacity we want to return
+     * @return Capacity having the number "number"
+     */
 	public Capacity setCapacity(int number) {
 		for (Capacity c : pokedex) {
 			if (number == c.getNumber()) {

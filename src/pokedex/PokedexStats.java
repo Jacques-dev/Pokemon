@@ -22,6 +22,10 @@ public class PokedexStats implements Serializable{
 	}
 
 	
+	/**
+     * 
+     * @return List<Pokemon> containing all the pokemon attributes in the pokedexstats.txt file
+     */
 	public List<Pokemon> read() throws IOException {
 		BufferedReader lecteurAvecBuffer = null;
 	    String ligne;
@@ -99,6 +103,11 @@ public class PokedexStats implements Serializable{
 	    return test;
 	}
 	
+	/**
+     * Verify if a pokemon is contained in the pokedexstats.txt file
+     * @param String "name" representing a pokemon name
+     * @return true if the pokemon entered is known in the pokedexstats.txt file
+     */
 	public boolean checkPokemon(String name) {
 		for (Pokemon p : pokedex) {
 			
@@ -110,12 +119,20 @@ public class PokedexStats implements Serializable{
 		return false;
 	}
 	
+	/**
+     * Display all the pokemons in the pokedexapparences.txt file and their attributes
+     */
 	public void openPokedex() {
 		for (Pokemon p : pokedex) {
 			System.out.println(p.getName());
 		}
 	}
 
+	/**
+     * 
+     * @param String "str" the name of the pokemon we want to return
+     * @return Pokemon having the same name as str parameter
+     */
 	public Pokemon stringToPokemon(String str) {
 		for (Pokemon p : pokedex) {
 			
@@ -125,7 +142,12 @@ public class PokedexStats implements Serializable{
 		}
 		throw new IllegalArgumentException("This pokemon deosn't exist !!");
 	}
-	
+
+	/**
+     * 
+     * @param int "number" the number of the pokemon we want to return
+     * @return Pokemon having the number "number"
+     */
 	public Pokemon intToPokemon(int number) {
 		for (Pokemon p : pokedex) {
 			

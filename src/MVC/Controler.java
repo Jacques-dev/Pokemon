@@ -19,6 +19,10 @@ import pokedex.PokedexStats;
 
 public class Controler {
 
+	/**
+     * Display the first menu and respond to the user's entries
+     * @return Model created by the user or restored from a save
+     */
 	@SuppressWarnings("resource")
 	public Model start() throws IOException {
 		View.start();
@@ -55,6 +59,10 @@ public class Controler {
 		return null;
 	}
 
+	/**
+     * Display all the pokemons and the capacities they're able to learn
+     * @return Model containing the pokemon chosen by the user and their capacities
+     */
 	@SuppressWarnings("resource")
 	public Model setTeam() throws IOException {
 
@@ -104,7 +112,11 @@ public class Controler {
 
 	}
 
-	// Méthode pour créer un model (ennemi) en indiquant son nombre de pokémon
+	/**
+     * Creates a new model containing random pokemons
+     * @param int "teamSize", the number of pokemon you want to create 
+     * @return Model containing the pokemon created and their capacities
+     */
 	@SuppressWarnings("resource")
 	public Model setEnnemy(int teamSize) throws IOException {
 
@@ -139,6 +151,10 @@ public class Controler {
 
 	}
 
+	/**
+     * 
+     * @param Model "data", the model you want to save in the "Data.ser" file
+     */
 	public void save(Model data) throws IOException {
 		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Data.ser"))) {
 			oos.writeObject(data);
@@ -148,6 +164,10 @@ public class Controler {
 		}
 	}
 
+	/**
+     * 
+     * @return Model contained in the "Data.ser" file
+     */
 	public Model read() throws ClassNotFoundException, IOException {
 
 		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("Data.ser"))) {
@@ -163,6 +183,10 @@ public class Controler {
 		return null;
 	}
 
+	/**
+     * Display the post-selection menu and respond to the user's entries
+     * @param Model "data" created by the user or restored from a save
+     */
 	@SuppressWarnings("resource")
 	public void menu(Model data) {
 		View.menu();
@@ -190,6 +214,11 @@ public class Controler {
 		}
 	}
 
+	/**
+     * Display the pre-fight menu and respond to the user's entries
+     * @param Model "data" created by the user or restored from a save
+     * @return int "choice" representing the user's choice
+     */
 	public int choice(Model data) {
 		View.choice();
 		@SuppressWarnings("resource")
@@ -217,6 +246,10 @@ public class Controler {
 		return 0;
 	}
 
+	/**
+     * Creates a match between two models
+     * @param 2 Model representing the two teams
+     */
 	public void versus(Model player1, Model player2) {
 		Pokemon p1 = player1.getPokemon();
 		ArrayList<Capacity> c1 = p1.getCapacities();
@@ -225,8 +258,6 @@ public class Controler {
 		ArrayList<Capacity> c2 = p2.getCapacities();
 		while (true) {
 			View.space();
-
-			System.out.println("-_- TEST -_-");
 
 			switch (fight(p1, c1, p2, c2, player1, player2)) {
 			case 0:
@@ -273,6 +304,11 @@ public class Controler {
 
 	}
 
+	/**
+     * Manage the in-fight display and the user's actions
+     * @param Pokemon "p1", ArrayList<Capacity> "capacities1, Pokemon "p2", ArrayList<Capacity> "capacities2", Model "player1", Model "player2"
+     * @return int representing differents in-fight events
+     */
 	@SuppressWarnings("resource")
 	public int fight(Pokemon p1, ArrayList<Capacity> capacities1, Pokemon p2, ArrayList<Capacity> capacities2,
 			Model player1, Model player2) {
@@ -293,7 +329,7 @@ public class Controler {
 
 			Scanner sc = new Scanner(System.in);
 			String str = sc.nextLine();
-			if (str.equals("e")) {// escape
+			if (str.equals("e")) {
 				if (boolean_player1) {
 					System.out.println("Player 1 gave up !");
 					System.out.println("Player 2 won !");
@@ -358,6 +394,11 @@ public class Controler {
 		}
 	}
 
+	/**
+     * Manage damages caused by a capacity on a pokemon
+     * @param Capacity "c", Pokemon "p_attack" the pokemon which attacks, Pokemon "p_defend" the pokemon attacked
+     * @return Pokemon p_defend with the hp he got left after being attacked
+     */
 	public Pokemon action(Capacity c, Pokemon p_attack, Pokemon p_defend) {
 		int x = (int) ((((p_attack.getLevel() * 0.4) + 2) * p_attack.getDamages() * c.getPower())
 				/ (p_defend.getDefenses() * 50));
@@ -368,7 +409,11 @@ public class Controler {
 		return p_defend;
 	}
 
-	//Method for dev purpose, allow to one shot the opponent Pokemon
+	/**
+     * Method for dev purposes only, allow to one shot the opponent pokemon
+     * @param Pokemon "p_defend" the pokemon attacked
+     * @return Pokemon p_defend with the hp he got left after being attacked
+     */
 	public Pokemon oneshot(Pokemon p_defend) {
 		p_defend.setLife(999);
 
