@@ -40,10 +40,10 @@ public class Model implements Serializable{
 	public void printTeam(String x) {
 		
 		System.out.println("--TEAM "+x+"--");
-		StringBuilder str = new StringBuilder();
 		for (Pokemon p : team) {
+			StringBuilder str = new StringBuilder();
 			for (Capacity c : p.getCapacities()) {
-				str.append(c.getName());
+				str.append(c.getName()+"  ");
 			}
 			System.out.println(p.getName()+" : [" + str.toString() + "]");
 		}

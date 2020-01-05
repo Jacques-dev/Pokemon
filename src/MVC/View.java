@@ -1,11 +1,18 @@
 package MVC;
 
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import abstractClass.Capacity;
 import abstractClass.Pokemon;
 import lab.MyMethodes;
+
+import javax.imageio.ImageIO;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class View {
 	
@@ -67,7 +74,9 @@ public class View {
 		space();
 		System.out.println(bar2()+"GAME"+bar2());
 		System.out.println("1 - Fight");
-		System.out.println("2 - Rules");
+		System.out.println("2 - Classic Ligue");
+		System.out.println("3 - Ligue made in DUT 2");
+		System.out.println("4 - Rules");
 		System.out.println("0 - Menu");
 		bar();
 	}
@@ -77,7 +86,7 @@ public class View {
 		player1.printTeam("1");
 		System.out.println(bar2()+"VERSUS"+bar2());
 		player2.printTeam("2");
-		MyMethodes.wait(1);
+		MyMethodes.wait(3);
 		space();
 	}
 	public static void capacitySelection(Pokemon p, ArrayList<Capacity> c) {
@@ -88,6 +97,9 @@ public class View {
 			i++;
 		}
 		bar();
+		System.out.println("c - change pokemon");
+		System.out.println("a - oneshot");
+		System.out.println("e - escape (loose)");
 	}
 	
 	public static void printLife(Pokemon p, int x) {
@@ -99,11 +111,12 @@ public class View {
 	public static void selectYourPokemon(ArrayList<Pokemon> team) {
 		int x = 0;
 		space();
-		System.out.println(bar2()+"Witch will have to fight ???"+bar2());
+		System.out.println(bar2()+"Wich Pokemon will have to fight ???"+bar2());
 		for (Pokemon p : team) {
 			System.out.println(x + " - " + p.getName());
 			x++;
 		}
 		bar();
 	}
+	
 }

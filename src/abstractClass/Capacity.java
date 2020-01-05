@@ -8,6 +8,7 @@ import interfaces.I_Capacities;
 
 @SuppressWarnings("serial")
 public class Capacity implements I_Capacities, Serializable{
+	private final int number;
 	private final String name;
 	private final Type type; //exemple : new Electric()
 	private final int power; //15 - 300
@@ -15,7 +16,7 @@ public class Capacity implements I_Capacities, Serializable{
 	private final int accuracy; //0 - 100
 	private final CapacityType captype; //exemple : Special
 	
-	public Capacity(String name, Type type, int power, int pp, int accuracy, CapacityType captype) {
+	public Capacity(int number, String name, Type type, int power, int pp, int accuracy, CapacityType captype) {
 //		System.out.println(captype);
 //		if (!(captype.equals(CapacityType.Statut))) {
 //			if (power < 15 || power > 300 || !(power%5 == 0)) {
@@ -25,6 +26,7 @@ public class Capacity implements I_Capacities, Serializable{
 //				throw new IllegalArgumentException("Precision field is not correct");
 //			}
 //		}
+		this.number = number;
 		this.name = Objects.requireNonNull(name);;
 		this.power = power;
 		this.pp = pp;
@@ -35,6 +37,7 @@ public class Capacity implements I_Capacities, Serializable{
 	
 	public String toString() {
 		StringBuilder str = new StringBuilder();
+		str.append("number :"+number+"\n");
 		str.append("name : "+name+"\n");
 		str.append("type : "+type+"\n");
 		str.append("power : "+power+"\n");
@@ -52,6 +55,10 @@ public class Capacity implements I_Capacities, Serializable{
 		return false;
 	}
 
+	public int getNumber() {
+		return number;
+	}
+	
 	public String getName() {
 		return name;
 	}

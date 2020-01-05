@@ -13,6 +13,7 @@ import abstractClass.Capacity;
 import abstractClass.Type;
 import capacityType.CapacityType;
 import lab.MyMethodes;
+import types.Normal;
 
 
 @SuppressWarnings("serial")
@@ -38,6 +39,7 @@ public class Attacks implements Serializable{
 	    List<Capacity> test = new ArrayList<>();
 	    Capacity cap = null;
 	    
+	    int number = 0;
 	    String name = null;
 		Type type = null; //exemple : new Electric()
 		int power = 0; //15 - 300
@@ -50,6 +52,8 @@ public class Attacks implements Serializable{
 	    	for (int i = 0 ; i != str.length ; i++) {
 	    		
 	    		switch (i) {
+	    			case 0:
+	    				number = Integer.valueOf(str[i]);
 		    		case 1:
 		    			name = str[i];
 		    			break;
@@ -83,7 +87,7 @@ public class Attacks implements Serializable{
 	    		}
 	    	}
 	    	
-	    	cap = new Capacity(name,type,power,pp,accuracy,captype);
+	    	cap = new Capacity(number,name,type,power,pp,accuracy,captype);
 	    	test.add(cap);
 	    }
 	    
@@ -103,6 +107,7 @@ public class Attacks implements Serializable{
 	}
 	
 	public void openPokedex(List<Type> types) {
+		types.add(new Normal());
 		for (Capacity cap : pokedex) {
 			if (types.contains(cap.getType())) {
 				System.out.println(cap.getName());
@@ -118,6 +123,15 @@ public class Attacks implements Serializable{
 			}
 		}
 		throw new IllegalArgumentException("This capacity deosn't exist !!");
+	}
+	
+	public Capacity setCapacity(int number) {
+		for (Capacity c : pokedex) {
+			if (number == c.getNumber()) {
+				return c;
+			}
+		}
+		throw new IllegalArgumentException("Capacity number " + number + " doesn't exist !!");
 	}
 	
 	@Override
