@@ -36,6 +36,7 @@ public class PokedexStats implements Serializable{
 	    List<Pokemon> test = new ArrayList<>();
 	    Pokemon p = null;
 	    
+	    int number = 0;
 	    String name = null;
 		List<Type> types = new ArrayList<Type>();
 		int life = 0;
@@ -50,6 +51,9 @@ public class PokedexStats implements Serializable{
 	    	for (int i = 0 ; i != str.length ; i++) {
 	    		
 	    		switch (i) {
+	    			case 0:
+	    				number = Integer.valueOf(str[i]);
+	    				break;
 		    		case 1:
 		    			name = str[i];
 		    			break;
@@ -82,7 +86,7 @@ public class PokedexStats implements Serializable{
 		    			speed = Integer.valueOf(str[i]);
 		    			break;
 	    		}
-	    		p = new Pokemon(name,types,life,damages, defenses, specialAttack, specialDefense, speed);
+	    		p = new Pokemon(number,name,types,life,damages, defenses, specialAttack, specialDefense, speed);
 	    	}
 	    	
 	    	
@@ -119,6 +123,16 @@ public class PokedexStats implements Serializable{
 			}
 		}
 		throw new IllegalArgumentException("This pokemon deosn't exist !!");
+	}
+	
+	public Pokemon intToPokemon(int number) {
+		for (Pokemon p : pokedex) {
+			
+			if (number == p.getNumber()) {
+				return p;
+			}
+		}
+		throw new IllegalArgumentException("Pokemon number " + number + " doesn't exist !!");
 	}
 	
 	@Override

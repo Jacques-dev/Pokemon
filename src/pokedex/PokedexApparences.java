@@ -27,7 +27,7 @@ public class PokedexApparences  implements Serializable{
 	    	lecteurAvecBuffer = new BufferedReader(new FileReader("pokedexapparences.txt"));
         }
 	    catch(FileNotFoundException exc) {
-	    	System.out.println("Erreur d'ouverture");
+	    	System.out.println("An error occured while opening");
 	    }
 	    
 	    ArrayList<String> x = new ArrayList<>();
@@ -68,17 +68,17 @@ public class PokedexApparences  implements Serializable{
 	public void openPokedex() {
 		StringBuilder str = new StringBuilder("[");
 		for (int i = 0 ; i != pokedex.size() ; i++) {
-			str.append(pokedex.get(i).get(0)+", ");
+			str.append("Pokemon number : " + pokedex.get(i).get(0)+", ");
 			str.append(pokedex.get(i).get(1)+", ");
-			str.append(pokedex.get(i).get(3)+", ");
-			str.append(pokedex.get(i).get(4)+", ");
-			str.append(pokedex.get(i).get(5)+", ");
+			str.append("height : " + pokedex.get(i).get(3)+"dm, ");
+			str.append("weight : " + pokedex.get(i).get(4)+"hg, ");
+			str.append("type(s) : " + pokedex.get(i).get(5));
 			try {
-				str.append(pokedex.get(i).get(5));
+				str.append(", " + pokedex.get(i).get(6));
 			} catch (Exception e) {
 				
 			}
-			str.append("]\n");
+			str.append("\n");
 		}
 		System.out.println(str.toString());
 	}
