@@ -759,7 +759,15 @@
 759,Stufful,Normal,Fighting,340,70,75,50,45,50,50
 760,Bewear,Normal,Fighting,500,120,125,80,55,60,60
 761,Bounsweet,Grass,,210,42,30,38,30,38,32
+<<<<<<< HEAD
 762,Steenee,Grass,,290,52,40,48,40,48,62
+=======
+<<<<<<< HEAD
+762,Steenee,Grass,,290,52,40,48,40,48,62
+=======
+762,Steenee,,Grass,290,52,40,48,40,48,62
+>>>>>>> master
+>>>>>>> master
 763,Tsareena,Grass,,510,72,120,98,50,98,72
 764,Comfey,Fairy,,485,51,52,90,82,110,100
 765,Oranguru,Normal,Psychic,490,90,60,80,90,110,60
@@ -774,7 +782,15 @@
 774,Minior-red-meteor,Rock,Flying,440,60,60,100,60,100,60
 775,Komala,Normal,,480,65,115,65,75,95,65
 776,Turtonator,Fire,Dragon,485,60,78,135,91,85,36
+<<<<<<< HEAD
 777,Togedemaru,Electric,Steel,435,65,98,63,40,73,96
+=======
+<<<<<<< HEAD
+777,Togedemaru,Electric,Steel,435,65,98,63,40,73,96
+=======
+777,Togedemaru,Eletric,Steel,435,65,98,63,40,73,96
+>>>>>>> master
+>>>>>>> master
 778,Mimikyu,Ghost,Fairy,476,55,90,80,50,105,96
 779,Bruxish,Water,Psychic,475,68,105,70,70,70,92
 780,Drampa,Normal,Dragon,485,78,60,85,135,91,36
@@ -782,7 +798,15 @@
 782,Jangmo-o,Dragon,,300,45,55,65,45,45,45
 783,Hakamo-o,Dragon,Fighting,420,55,75,90,65,70,65
 784,Kommo-o,Dragon,Fighting,600,75,110,125,100,105,85
+<<<<<<< HEAD
 785,Tapu-koko,Electric,Fairy,570,70,115,85,95,75,130
+=======
+<<<<<<< HEAD
+785,Tapu-koko,Electric,Fairy,570,70,115,85,95,75,130
+=======
+785,Tapu-koko,Eletric,Fairy,570,70,115,85,95,75,130
+>>>>>>> master
+>>>>>>> master
 786,Tapu-lele,Psychic,Fairy,570,70,85,75,130,115,95
 787,Tapu-bulu,Grass,Fairy,570,70,130,115,85,95,75
 788,Tapu-fini,Water,Fairy,570,70,75,115,95,130,85
@@ -793,7 +817,15 @@
 793,Nihilego,Rock,Poison,570,109,53,47,127,131,103
 794,Buzzwole,Bug,Fighting,570,107,139,139,53,53,79
 795,Pheromosa,Bug,Fighting,570,71,137,37,137,37,151
+<<<<<<< HEAD
 796,Xurkitree,Electric,,570,83,89,71,173,71,83
+=======
+<<<<<<< HEAD
+796,Xurkitree,Electric,,570,83,89,71,173,71,83
+=======
+796,Xurkitree,Eletric,,570,83,89,71,173,71,83
+>>>>>>> master
+>>>>>>> master
 797,Celesteela,Steel,Flying,570,97,101,103,107,101,61
 798,Kartana,Grass,Steel,570,59,181,131,59,31,109
 799,Guzzlord,Dark,Dragon,570,223,101,53,97,53,43

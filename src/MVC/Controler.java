@@ -49,9 +49,13 @@ public class Controler {
 		case "0":
 			System.exit(0);
 		}
+<<<<<<< HEAD
 		View.start();
 		str = sc.nextLine();
 	}
+=======
+
+>>>>>>> master
 		return null;
 	}
 
@@ -209,9 +213,12 @@ public class Controler {
 		case "0":
 			menu(data);
 		}
+<<<<<<< HEAD
 		View.choice();
 		str = sc.nextLine();
 	}
+=======
+>>>>>>> master
 		return 0;
 	}
 
@@ -223,6 +230,13 @@ public class Controler {
 		ArrayList<Capacity> c2 = p2.getCapacities();
 		while (true) {
 			View.space();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+			System.out.println("-_- TEST -_-");
+>>>>>>> master
+>>>>>>> master
 			switch (fight(p1, c1, p2, c2, player1, player2)) {
 			case 0:
 				return;
@@ -305,6 +319,7 @@ public class Controler {
 				} else {
 					return 4;
 				}
+<<<<<<< HEAD
 			}
 			if (str.contentEquals("a")) {
 				if (boolean_player1) {
@@ -321,6 +336,24 @@ public class Controler {
 					p1 = action(c, p2, p1); // p2 attack with c on p1
 				}
 			}
+=======
+			}
+			if (str.contentEquals("a")) {
+				if (boolean_player1) {
+					p2 = oneshot(p2);
+				} else {
+					p1 = oneshot(p1);
+				}
+			} if (!(str.contentEquals("e") || str.contentEquals("a") || str.contentEquals("c"))) {
+				Capacity c = capacities1.get(Integer.valueOf(str));
+
+				if (boolean_player1) {
+					p2 = action(c, p1, p2); // p1 attack with c on p2
+				} else {
+					p1 = action(c, p2, p1); // p2 attack with c on p1
+				}
+			}
+>>>>>>> master
 			if (p1.getLife() <= 0) {// p1 loose
 				return 1;
 			}
