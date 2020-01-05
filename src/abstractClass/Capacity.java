@@ -55,6 +55,10 @@ public class Capacity implements I_Capacities, Serializable{
 		return false;
 	}
 
+	/**
+	 * 
+	 * @return the index number of the pokedex of this capacity
+	 */
 	public int getNumber() {
 		return number;
 	}
@@ -83,7 +87,6 @@ public class Capacity implements I_Capacities, Serializable{
 	public int hashCode() {
 		return Objects.hash(name,type,power,pp,accuracy,captype);
 	}
-
 
 	public double getPower() {
 		return power;

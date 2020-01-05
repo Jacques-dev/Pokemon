@@ -23,14 +23,21 @@ import types.Water;
 
 public class MyMethodes {
 	
+	/**
+	 * 
+	 * @param x is a timer in seconds that will define how long the user will have to wait
+	 */
 	public static void wait(int x) {
 		try {
 		   Thread.sleep(x*1000) ;
 		}  catch (InterruptedException e) {
-		    // gestion de l'erreur
 		}
 	}
 	
+	/**
+	 * @param s is a Type but typed like string
+	 * @return the Type corresponding correctly with the string given in argument
+	 */
 	public static Type stringToType(String s) {
 		if (s.equals("fighting") || s.equals("Fighting")) {
 			return new Fighting();
@@ -107,6 +114,10 @@ public class MyMethodes {
 		throw new IllegalArgumentException ("!!! This type doesn't exist !!!");	
 	}
 	
+	/**
+	 * @param s is a ClassType but typed like string
+	 * @return the ClassTypeType corresponding correctly with the string given in argument
+	 */
 	public static CapacityType stringToClassType(String s) {
 		switch (s) {
 			case "physical":
@@ -119,6 +130,10 @@ public class MyMethodes {
 		throw new IllegalArgumentException ("!!! This class_type doesn't exist !!!");	
 	}
 	
+	/**
+	 * @param x is a int but not %5
+	 * @return the number %5 roundup of x
+	 */
 	public static int roundUp(int x) {
 		switch (x%5) {
 			case 1:

@@ -2,6 +2,10 @@ package capacityType;
 
 import java.io.Serializable;
 
+/**
+ * 
+ * @return a CapacityType which is Physical, Special, or Statut
+ */
 public enum CapacityType implements Serializable{
 	Physical {
 		private final String name = "Physical";

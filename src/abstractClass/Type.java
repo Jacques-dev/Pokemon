@@ -25,10 +25,18 @@ public abstract class Type implements Serializable{
 		return name;
 	}
 	
+	/**
+	 * 
+	 * @return return all the types that this one is weak against
+	 */
 	public ArrayList<Type> getWeakness() {
 		return weakness;
 	}
 
+	/**
+	 * 
+	 * @return return all the types that this one is strong against
+	 */
 	public ArrayList<Type> getStrength() {
 		return strength;
 	}
