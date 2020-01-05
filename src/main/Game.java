@@ -41,7 +41,11 @@ public class Game {
 			if (mode == 2) {
 					for (int i=0; i<4; i++) {
 						try {
+<<<<<<< HEAD
 							player2 = controler.setEnnemy(5);
+=======
+							player2 = controler.setEnnemy(1);
+>>>>>>> master
 						} catch (IOException e) {
 							e.printStackTrace();
 						}
@@ -51,7 +55,11 @@ public class Game {
 					controler.versus(player1, player2);
 					}
 					try {
+<<<<<<< HEAD
 					player2 = controler.setEnnemy(6);
+=======
+					player2 = controler.setEnnemy(2);
+>>>>>>> master
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
@@ -64,7 +72,11 @@ public class Game {
 			if (mode == 3) {
 				for (int i=0; i<9; i++) {
 					try {
+<<<<<<< HEAD
 						player2 = controler.setEnnemy(6);
+=======
+						player2 = controler.setEnnemy(1);
+>>>>>>> master
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
@@ -74,7 +86,11 @@ public class Game {
 				controler.versus(player1, player2);
 				}
 				try {
+<<<<<<< HEAD
 				player2 = controler.setEnnemy(6);
+=======
+				player2 = controler.setEnnemy(2);
+>>>>>>> master
 				} catch (IOException e) {
 					e.printStackTrace();
 				}

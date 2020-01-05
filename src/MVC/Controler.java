@@ -212,6 +212,10 @@ public class Controler {
 		ArrayList<Capacity> c2 = p2.getCapacities();
 		while (true) {
 			View.space();
+<<<<<<< HEAD
+=======
+			System.out.println("-_- TEST -_-");
+>>>>>>> master
 			switch (fight(p1, c1, p2, c2, player1, player2)) {
 			case 0:
 				return;

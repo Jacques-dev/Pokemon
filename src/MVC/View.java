@@ -98,7 +98,11 @@ public class View {
 		}
 		bar();
 		System.out.println("c - change pokemon");
+<<<<<<< HEAD
 		//System.out.println("a - oneshot");
+=======
+		System.out.println("a - oneshot");
+>>>>>>> master
 		System.out.println("e - escape (loose)");
 	}
 	
