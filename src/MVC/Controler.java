@@ -86,26 +86,29 @@ public class Controler {
 			if (ps.checkPokemon(str)) {
 				p = ps.stringToPokemon(str);
 			}
-
-			// Capacity set
-			for (int i = 0; i != 4; i++) {
-
-				sc = new Scanner(System.in);
-				a.openPokedex(p.getTypes());
-				System.out.println("\n" + p.getName() + " - capacities : ");
-				str = sc.nextLine();
-				Capacity c = null;
-				if (str.equals("0")) {
-					break;
+			
+			if (p != null) {
+				
+				// Capacity set
+				for (int i = 0; i != 4; i++) {
+	
+					sc = new Scanner(System.in);
+					a.openPokedex(p.getTypes());
+					System.out.println("\n" + p.getName() + " - capacities : ");
+					str = sc.nextLine();
+					Capacity c = null;
+					if (str.equals("0")) {
+						break;
+					}
+					if (a.checkAttack(str)) {
+						c = a.setCapacity(str);
+						p.learn(c);
+					}
 				}
-				if (a.checkAttack(str)) {
-					c = a.setCapacity(str);
-					p.learn(c);
-				}
+				team.add(p);
+	
+				counter++;
 			}
-			team.add(p);
-
-			counter++;
 
 		}
 		return new Model(team, pa, ps, a);
@@ -131,11 +134,11 @@ public class Controler {
 		int counter = 0;
 		while (counter != teamSize) {
 
-			// Créer un pokémon aléatoirement
+			// Crï¿½er un pokï¿½mon alï¿½atoi	    				System.out.println(number);rement
 			Pokemon p = null;
 			int nombreAleatoire = 1 + (int) (Math.random() * ((807 - 1) + 1));
 			p = ps.intToPokemon(nombreAleatoire);
-			// Récupérez 4 capacités aléatoirement
+			// Rï¿½cupï¿½rez 4 capacitï¿½s alï¿½atoirement
 			for (int i = 0; i != 4; i++) {
 
 				Capacity c = null;

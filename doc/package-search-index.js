@@ -1,0 +1,1 @@
+packageSearchIndex = [{"m":"Pokemon","l":"abstractClass"},{"l":"All Packages","url":"allpackages-index.html"},{"m":"Pokemon","l":"capacityType"},{"m":"Pokemon","l":"interfaces"},{"m":"Pokemon","l":"lab"},{"m":"Pokemon","l":"main"},{"m":"Pokemon","l":"MVC"},{"m":"Pokemon","l":"pokedex"},{"m":"Pokemon","l":"types"}]
