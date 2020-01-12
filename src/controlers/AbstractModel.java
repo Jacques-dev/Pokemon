@@ -1,4 +1,4 @@
-package MVC;
+package controlers;
 
 import java.io.Serializable;
 import java.util.ArrayList;
