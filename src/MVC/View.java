@@ -91,7 +91,7 @@ public class View {
      * Display the versus screen
      * @param Model "player1", Model "player 2"
      */
-	public static void printVersus(Model player1, Model player2) {
+	public static void printVersus(AbstractModel player1, AbstractModel player2) {
 		space();
 		player1.printTeam("1");
 		System.out.println(bar2()+"VERSUS"+bar2());

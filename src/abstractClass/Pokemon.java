@@ -2,11 +2,14 @@ package abstractClass;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
+import MVC.View;
+
 @SuppressWarnings("serial")
-public class Pokemon  implements Serializable{
+public class Pokemon  implements Serializable, Comparable<Pokemon>{
 	
 	private final int number;
 	private final String name;
@@ -180,6 +183,16 @@ public class Pokemon  implements Serializable{
 	 */
 	public int getDefenses() {
 		return defenses;
+	}
+	
+	@Override
+	public int compareTo(Pokemon o) {
+		int s1 = this.getSpeed();
+		int s2 = o.getSpeed();
+		if (s1 >= s2) {
+			return 1;
+		}
+		return -1;
 	}
 
 }
