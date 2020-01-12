@@ -2,12 +2,12 @@ package main;
 
 import java.io.IOException;
 
-import MVC.AIModel;
-import MVC.AIVersus;
-import MVC.ClassicLeague;
-import MVC.Controler;
-import MVC.PlayerModel;
-import MVC.View;
+import controlers.AIModel;
+import controlers.AIVersus;
+import controlers.ClassicLeague;
+import controlers.Controler;
+import controlers.PlayerModel;
+import controlers.View;
 import lab.MyMethodes;
 
 public class Game {

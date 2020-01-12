@@ -1,4 +1,4 @@
-package MVC;
+package controlers;
 
 import java.io.IOException;
 import java.util.ArrayList;

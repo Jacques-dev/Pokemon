@@ -1,4 +1,4 @@
-package MVC;
+package controlers;
 
 import java.awt.Image;
 import java.io.File;
@@ -52,6 +52,11 @@ public class View {
 	@SuppressWarnings("resource")
 	public static void printRules() {
 		System.out.println(bar2()+"RULES"+bar2());
+		System.out.println("In this game you are able to fight agains't a player by selecting your team and fight");
+		System.out.println("Or play agasin't the league whitch can be the traditionnal or the DUT one (the amount of pokemon is superior to 6)");
+		System.out.println("when you go to the menu, you can save your team, so when you will return to the game you can load it.");
+		System.out.println("Fights are really similar to the orinary game, and intuitives !");
+		System.out.println("Enjoy :)");
 		bar();
 		return;
 	}

@@ -2,11 +2,8 @@ package abstractClass;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
-
-import MVC.View;
 
 @SuppressWarnings("serial")
 public class Pokemon  implements Serializable, Comparable<Pokemon>{

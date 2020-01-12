@@ -1,4 +1,4 @@
-package MVC;
+package controlers;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
