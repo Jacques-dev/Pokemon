@@ -17,9 +17,9 @@ import pokedex.PokedexStats;
 @SuppressWarnings("serial")
 abstract class AbstractModel implements Serializable {
 	protected ArrayList<Pokemon> team;
-	protected  PokedexApparences pa;
-	protected  PokedexStats ps;
-	protected  Attacks a;
+	protected PokedexApparences pa;
+	protected PokedexStats ps;
+	protected Attacks a;
 	protected boolean turn;
 	private static int SIZE = 6;
 
@@ -54,7 +54,14 @@ abstract class AbstractModel implements Serializable {
 			p.setLife(999);
 		}
 	}
-	
+
+	public boolean cantFight() {
+		if (team.size() <= 0) {
+			return true;
+		}
+		return false;
+	}
+
 	public int getTeamSize() {
 		return team.size();
 	}
@@ -74,7 +81,7 @@ abstract class AbstractModel implements Serializable {
 	public ArrayList<Pokemon> getTeam() {
 		return team;
 	}
-	
+
 	public boolean getTurn() {
 		return turn;
 	}
@@ -89,6 +96,6 @@ abstract class AbstractModel implements Serializable {
 	 * @return Pokemon chosen by the user
 	 */
 	abstract Pokemon getPokemon();
-	
+
 	abstract void setTeam(int teamsize);
 }

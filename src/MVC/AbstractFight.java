@@ -84,11 +84,11 @@ public abstract class AbstractFight {
 	}
 
 	protected boolean finish() {
-		if (model1.getTeamSize() <= 0) {
+		if (model1.cantFight()) {
 			System.out.println("Player 1 can't fight anymore, Player 2 won");
 			return true;
 		}
-		if (model2.getTeamSize() <= 0) {
+		if (model2.cantFight()) {
 			System.out.println("Player 2 can't fight anymore, Player 1 won");
 			return true;
 		}
