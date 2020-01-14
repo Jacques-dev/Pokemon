@@ -12,6 +12,12 @@ import pokedex.PokedexStats;
 
 public class PlayerModel extends AbstractModel{
 
+	/**
+     * PlayerModel constructor
+     * @param an ArrayList<Pokemon> representing the player's pokemon, a PokedexApparences,
+     * a PokedexStats & Attacks
+     * @return a PlayerModel
+     */
 	public PlayerModel(ArrayList<Pokemon> team, PokedexApparences pa, PokedexStats ps, Attacks a) {
 		this.team = team;
 		this.pa = pa;
@@ -20,10 +26,18 @@ public class PlayerModel extends AbstractModel{
 		this.turn = false;
 	}
 	
+	/**
+     * initiate the team creation process for a limited number of Pokemons
+     * @param an int representing the maximum size of the team
+     */
 	public PlayerModel(int teamSize) {
 		setTeam(teamSize);
 	}
 	
+	/**
+     * Display all the pokemons of a model + their index to select one
+     * @return the selected Pokemon
+     */
 	@Override
 	Pokemon getPokemon() {
 		View.selectYourPokemon(team);
@@ -45,6 +59,10 @@ public class PlayerModel extends AbstractModel{
 		}
 	}
 
+	/**
+     * Make a user create his team
+     * @param an int representing the maximum size of the team attribute
+     */
 	@Override
 	void setTeam(int teamSize) {
 		ArrayList<Pokemon> team = new ArrayList<Pokemon>();

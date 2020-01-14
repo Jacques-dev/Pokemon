@@ -21,7 +21,7 @@ public class Controler {
 
 	/**
      * Display the first menu and respond to the user's entries
-     * @return Model created by the user or restored from a save
+     * @return PlayerModel created by the user or restored from a save
      */
 	@SuppressWarnings("resource")
 	public PlayerModel start() throws IOException {
@@ -60,7 +60,7 @@ public class Controler {
 	}
 
 	/**
-     * 
+     * save a model in the "Data.ser" file
      * @param Model "data", the model you want to save in the "Data.ser" file
      */
 	public void save(PlayerModel data) throws IOException {
@@ -73,8 +73,8 @@ public class Controler {
 	}
 
 	/**
-     * 
-     * @return Model contained in the "Data.ser" file
+     * restore a PlayerModel from the "Data.ser" file
+     * @return the PlayerModel contained in the "Data.ser" file
      */
 	public PlayerModel read() throws ClassNotFoundException, IOException {
 
@@ -127,7 +127,7 @@ public class Controler {
      * @param Model "data" created by the user or restored from a save
      * @return int "choice" representing the user's choice
      */
-	public int choice(PlayerModel data) {
+	public void choice(PlayerModel data) {
 		View.choice();
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
@@ -138,15 +138,15 @@ public class Controler {
 			PlayerModel model2 = new PlayerModel(6);
 			PlayerVersus v = new PlayerVersus(data, model2);
 			v.start();
-			break;
+			return;
 		case "2":
 			ClassicLeague cl = new ClassicLeague();
 			cl.challenge(data);
-			break;
+			return;
 		case "3":
 			LeagueDUT ldut = new LeagueDUT();
 			ldut.challenge(data);
-			break;
+			return;
 		case "4":
 			View.printRules();
 			break;
@@ -158,7 +158,7 @@ public class Controler {
 		str = sc.nextLine();
 	}
 
-		return 0;
+		return;
 	}
 
 }

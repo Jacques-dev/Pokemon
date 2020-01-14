@@ -8,6 +8,11 @@ import abstractClass.Pokemon;
 
 public class PlayerFight extends AbstractFight{
 
+	/**
+     * PlayerFight constructor
+     * @param two PlayerModel, two Pokemon representing the two players Pokemon & two ArrayList<Capacity>
+     * representing the pokemon capacities
+     */
 	public PlayerFight(PlayerModel model1, PlayerModel model2, Pokemon p1, Pokemon p2, ArrayList<Capacity> c1, ArrayList<Capacity> c2) {
 		this.model1 = model1;
 		this.model2 = model2;
@@ -17,6 +22,10 @@ public class PlayerFight extends AbstractFight{
 		this.c2 = c2;
 	}
 	
+	/**
+     * Display the pokemon capacities of the playing model
+     * @param the playing model
+     */
 	@Override
 	protected void displayCap(AbstractModel model) {
 		if (model == model1) {
@@ -27,6 +36,11 @@ public class PlayerFight extends AbstractFight{
 		}
 	}
 	
+	/**
+     * Display the different actions possible for the playing model
+     * @param the playing model
+     * @return an int representing the player's choice
+     */
 	@Override
 	protected int chooseAction(AbstractModel model) {
 		displayCap(model);
@@ -44,7 +58,7 @@ public class PlayerFight extends AbstractFight{
 			}
 			try {
 				int res = Integer.valueOf(str);
-				if (!(res < 0 || res > getModelCapacities(model).size())) {
+				if (res >= 0 && res < model.getTeamSize()) {
 					return res;
 				}
 			} catch (Exception e) {

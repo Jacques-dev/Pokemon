@@ -12,7 +12,7 @@ public class Capacity implements I_Capacities, Serializable{
 	private final String name;
 	private final Type type; //exemple : new Electric()
 	private final int power; //15 - 300
-	private final int pp;
+	private int pp;
 	private final int accuracy; //0 - 100
 	private final CapacityType captype; //exemple : Special
 	
@@ -90,6 +90,14 @@ public class Capacity implements I_Capacities, Serializable{
 
 	public double getPower() {
 		return power;
+	}
+	
+	public void lowerPP() {
+		pp --;
+	}
+	
+	public int getPP() {
+		return pp;
 	}
 
 }

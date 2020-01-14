@@ -4,11 +4,19 @@ import java.util.ArrayList;
 
 public class ClassicLeague extends AbstractLeague{
 
+	/**
+	 * ClassicLeague constructor
+	 *@return a randomly generated ClassicLeague 
+	 */	
 	public ClassicLeague() {
 		this.members = setMembre();
 		this.champion = setChampion();
 	}
 	
+	/**
+	 * create all the members of the league created randomly
+	 *@return an ArrayList<AIModel> representing the league's members
+	 */	
 	@Override
 	ArrayList<AIModel> setMembre() {
 		ArrayList<AIModel> members = new ArrayList<>();

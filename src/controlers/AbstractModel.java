@@ -30,7 +30,6 @@ abstract class AbstractModel implements Serializable {
 
 	/**
 	 * Display all the pokemons of a model with their capacities
-	 * 
 	 * @param String "x" representing the team's name
 	 */
 	public void printTeam(String x) {
@@ -45,16 +44,27 @@ abstract class AbstractModel implements Serializable {
 		}
 	}
 
+	/**
+	 * return the maximum size of a model's team
+	 * @return the maximum size of a model's team
+	 */
 	public static int getSIZE() {
 		return SIZE;
 	}
 
+	/**
+	 * Set all the pokemon of a model hp to -0 
+	 */
 	public void cleanTeam() {
 		for (Pokemon p : team) {
 			p.setLife(999);
 		}
 	}
 
+	/**
+	 * return true if a player cant fight anymore, false if not
+	 * @return true if the model has no more pokemon, false if not
+	 */
 	public boolean cantFight() {
 		if (team.size() <= 0) {
 			return true;
@@ -91,11 +101,13 @@ abstract class AbstractModel implements Serializable {
 	}
 
 	/**
-	 * Display all the pokemons contained in a model to choose one
-	 * 
 	 * @return Pokemon chosen by the user
 	 */
 	abstract Pokemon getPokemon();
 
+	/**
+	 * initialise the process to create a model
+	 *@param int representing the maximum size of the model's team
+	 */	
 	abstract void setTeam(int teamsize);
 }

@@ -10,6 +10,11 @@ public class PlayerVersus {
 	private final PlayerModel model2;
 	private final PlayerFight fight;
 	
+	/**
+     * PlayerVersus constructor
+     * @param two PlayerModel
+     * @return a PlayerVersus
+     */
 	public PlayerVersus(PlayerModel model1, PlayerModel model2) {
 		super();
 		this.model1 = model1;
@@ -17,6 +22,10 @@ public class PlayerVersus {
 		this.fight = createFight();
 	}
 	
+	/**
+     * initialise the fight attribute of a PlayerVersus
+     * @return a PlayerFight
+     */
 	public PlayerFight createFight() {
 		Pokemon p1 = model1.getPokemon();
 		ArrayList<Capacity> c1 = p1.getCapacities();
@@ -27,6 +36,9 @@ public class PlayerVersus {
 		return new PlayerFight(model1, model2 ,p1, p2, c1, c2 );
 	}
 	
+	/**
+     * Start the fight between the two PlayerModel
+     */
 	public void start() {
 		View.printVersus(model1, model2);
 		fight.start();

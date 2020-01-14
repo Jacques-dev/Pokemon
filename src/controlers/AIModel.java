@@ -12,10 +12,19 @@ import pokedex.PokedexStats;
 
 public class AIModel extends AbstractModel{
 	
+	/**
+	 * AIModel constructor
+	 *@param int representing the maximum size of the model's team
+	 *@return an AIModel
+	 */	
 	public AIModel(int teamsize) {
 		setTeam(teamsize);
 	}
 	
+	/**
+	 * choose a pokemon from the team attribute
+	 * @return a randomly chosen Pokemon
+	 */	
 	@Override
 	Pokemon getPokemon() {
 		@SuppressWarnings("resource")
@@ -23,6 +32,10 @@ public class AIModel extends AbstractModel{
 		return team.get(randomInt);
 	}
 
+	/**
+	 * initialise an AIModel with random Pokemons
+	 *@param int representing the maximum size of the model's team
+	 */	
 	@Override
 	void setTeam(int teamSize) {
 		if (teamSize < 1 || teamSize > 6) {

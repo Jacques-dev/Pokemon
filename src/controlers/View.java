@@ -113,7 +113,7 @@ public class View {
 		System.out.println(bar2()+p.getName()+" turn"+bar2());
 		int i = 0;
 		for (Capacity x : c) {
-			System.out.println(i+" - "+x.getName());
+			System.out.println(i+" - "+x.getName() + " " +x.getPP() + "pp");
 			i++;
 		}
 		bar();
